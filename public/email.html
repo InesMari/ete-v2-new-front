@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-control" content="no-cache,no-store">
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="icon" href="./logo.ico">
+    <title>易迁易</title>
+</head>
+<body>
+
+</body>
+<script>
+window.onload = function(){
+    const params = new URLSearchParams(window.location.search);
+    const type = params.get('type');
+    const id = params.get('id');
+    if(type == 101){
+        var pageInfo = {
+            "urlId":"viewRequirement" + new Date().getTime(),
+            "query":{"id":id},
+            "urlName":"需求详情",
+            "urlPathName":"/viewRequirement",
+            "urlPath":"/pt/proj/requirement/requirementDetail.vue",
+            "formerPath":"/viewRequirement",
+            "active":true
+        }
+        localStorage.setItem("pageInfo",JSON.stringify(pageInfo));
+        location.href = location.origin + "/viewRequirement";
+    }else if(type==102){
+        var pageInfo = {
+            "urlId":"viewTask" + new Date().getTime(),
+            "query":{"id":id},
+            "urlName":"任务详情",
+            "urlPathName":"/viewTask",
+            "urlPath":"/pt/proj/task/taskDetail.vue",
+            "formerPath":"/viewTask",
+            "active":true
+        }
+        localStorage.setItem("pageInfo",JSON.stringify(pageInfo));
+        location.href = location.origin + "/viewTask";
+    }else if(type==103){
+        var pageInfo = {
+            "urlId":"viewBug" + new Date().getTime(),
+            "query":{"id":id},
+            "urlName":"缺陷详情",
+            "urlPathName":"/viewBug",
+            "urlPath":"/pt/proj/bug/bugDetail.vue",
+            "formerPath":"/viewBug",
+            "active":true
+        }
+        localStorage.setItem("pageInfo",JSON.stringify(pageInfo));
+        location.href = location.origin + "/viewBug";
+    }
+}
+</script>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-control" content="no-cache,no-store">
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="icon" href="./logo.ico">
+  <title>易迁易</title>
+  <style>
+    html,body{
+      height: 100%;
+    }
+    body{
+      background: #eee;
+    }
+    #pdfContainer{
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding-bottom: 100px;
+    }
+    canvas{
+      margin-bottom: 10px;
+      width: 100%;
+    }
+    .btnView{
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 99;
+      background: #fff;
+      padding: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: none;
+    }
+    .checkboxBtn{
+      text-align: center;
+      visibility: hidden;
+    }
+    .btn{
+      display: block;
+      width: 80%;
+      padding: 10px 0;
+      border: none;
+      background: #999;
+      color: #fff;
+      border-radius: 5px;
+      margin: 10px auto 0;
+    }
+    #down{
+      background: #e70b1d;
+    }
+    .parentBox {
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    .loadBox .loaderContantBox {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      margin: -20px 0 0 -20px;
+      color: #666;
+      font-size: 40px;
+      overflow: hidden;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      transform: translateZ(0);
+      /* animation：规定完成动画所花费的时间，该属性必须规定，否则动画时长为0，无法播放 */
+      animation: loadBox 1.7s infinite ease, round 1.7s infinite ease;
+    }
+  
+    @keyframes loadBox {
+      0% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em,
+          0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+      }
+  
+      5%,
+      95% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em,
+          0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+      }
+  
+      10%,
+      59% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em,
+          -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em,
+          -0.297em -0.775em 0 -0.477em;
+      }
+  
+      20% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em,
+          -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em,
+          -0.749em -0.34em 0 -0.477em;
+      }
+  
+      38% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em,
+          -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em,
+          -0.82em -0.09em 0 -0.477em;
+      }
+  
+      100% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em,
+          0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+      }
+    }
+  
+    @keyframes round {
+      0% {
+        transform: rotate(0deg); /* 开始旋转 div 元素 */
+      }
+  
+      100% {
+        transform: rotate(360deg); /* 结束旋转 div 元素 */
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="parentBox" id="load">
+  <div class="loadBox">
+    <div class="loaderContantBox"></div>
+  </div>
+</div>
+<div id="pdfContainer"></div>
+<div id="readBtn" class="btnView">
+  <div id="checkboxBtn" class="checkboxBtn">
+    <input type="checkbox" id="checkbox" name="checkbox">
+    <label for="checkbox">我已阅读并同意此接单声明</label><br>
+  </div>
+  <button id="btn" class="btn">请阅读协议内容</button>
+</div>
+<div id="downBtn" class="btnView">
+  <button id="down" class="btn">下载</button>
+</div>
+
+<script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+<script src="./static/js/pdf.js?v1.1 "></script>
+<script>
+window.onload = function(){
+
+  // 是否阅读到底
+  var isRead = false;
+  // 是否阅读够时间
+  var isTime = false;
+  // 最少阅读时间
+  var minReadTime = 0;
+  // 是否同意协议
+  var isAgree = false;
+
+  
+  // PDF展示盒子
+  var pdfContainer = document.getElementById('pdfContainer');
+  // 按钮
+  var btn = document.getElementById('btn');
+  // 下载按钮
+  var down = document.getElementById('down');
+  // 勾选栏
+  var checkboxBtn = document.getElementById('checkboxBtn');
+  // 选择框
+  var checkbox = document.getElementById('checkbox');
+  // 下方操作按钮
+  var readBtn = document.getElementById('readBtn');
+  var downBtn = document.getElementById('downBtn');
+
+  // PDF文件路径
+  var currentUrl = window.location.href;
+  var urlParams = new URLSearchParams(window.location.search);
+  var pdfPath = urlParams.get('pdf');
+  pdfPath = pdfPath.replace('www.1000e56.com','pt.1000e56.com')
+  // 数据列表index位置
+  var listIndex = urlParams.get('index');
+  // 是否查看详情
+  var detail = urlParams.get('detail');
+
+  if(detail && detail!="undefined"){
+    // downBtn.style.display = "block"; 
+  }else{
+    readBtn.style.display = "block"; 
+  }
+
+  let pdfOption = {
+    url : pdfPath,
+    cMapUrl : '/cmaps/',
+    cMapPacked : true,
+  }
+  // 使用PDF.js加载PDF文件
+  pdfjsLib.getDocument(pdfOption).promise.then(function(pdf) {
+    
+     // 遍历所有页面
+    for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
+      // 创建一个用于显示单页的canvas元素
+      const canvas = document.createElement('canvas');
+
+      // 将canvas添加到PDF容器中
+      pdfContainer.appendChild(canvas);
+
+      // 获取当前页的尺寸
+      var page = pdf.getPage(pageNumber).then(function(page){
+        var viewport = page.getViewport({ scale: 2 });
+        // 根据容器宽度计算合适的缩放比例
+        var containerWidth = pdfContainer.clientWidth;
+        var scale = containerWidth / viewport.width;
+        
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        
+        // 根据尺寸缩放盒子适应屏幕展示
+        let zoom = pdfContainer.clientWidth/viewport.width;
+        pdfContainer.style.zoom = zoom;
+  
+        // 渲染当前页到canvas上
+        page.render({ 
+          canvasContext: canvas.getContext('2d', { alpha: false, antialias: 'subpixel',desynchronized:true }), 
+          viewport: page.getViewport({ scale: 2 }),
+          enableTextDrawing: true,
+          renderInteractiveForms: true,
+          // 可选：设置高分辨率
+          resolution: 'high',
+        });
+        
+      });
+    }
+
+    // PDF展示盒子
+    var load = document.getElementById('load');
+    load.style.display = "none";
+
+    // 开始倒计时阅读
+    // countTime();
+    
+    // 倒计时
+    function countTime(){
+      var interval = setInterval(function(){
+        btn.innerText = `请阅读协议内容（${minReadTime}S）`
+        minReadTime--;
+        if(minReadTime == 0){
+          btn.innerText = "接单出车"
+          clearInterval(interval);
+          if(isRead){
+            // btn.style.background = "#e70b1d"
+            checkboxBtn.style.visibility = "visible";
+          }
+        }
+      },1000)
+    }
+  
+    // 监听滚动事件
+    window.addEventListener('scroll', function() {
+      // 滚动条距离顶部的高度
+      var scrollTop = document.body.scrollTop || window.pageYOffset;;
+  
+      // 元素内容的总高度
+      var scrollHeight = document.body.scrollHeight;
+  
+      // 元素自身的可见高度
+      var clientHeight = document.body.clientHeight;
+      // 判断是否滚动到底部
+      if (scrollTop + clientHeight >= scrollHeight - clientHeight/2) {
+        console.log('已经滚动到底部');
+        // 执行相应的操作
+        isRead = true;
+        btn.innerText = "接单出车"
+        checkboxBtn.style.visibility = "visible";
+        // if(minReadTime == 0){
+        //     // btn.style.background = "#e70b1d"
+        //     checkboxBtn.style.visibility = "visible";
+        // }
+      }
+  });
+
+  // 勾选协议
+  checkbox.addEventListener('change', function() {
+    if (this.checked) {
+      isAgree = true;
+      btn.style.background = "#e70b1d"
+    } else {
+      isAgree = false;
+      btn.style.background = "#999"
+    }
+  });
+
+  // 接单出车
+  btn.addEventListener('click', function() {
+    if(isRead && minReadTime == 0 && isAgree){
+      console.log("操作正确");
+      wx.miniProgram.postMessage({
+        data:{
+          index:listIndex
+        }
+      })
+      wx.miniProgram.navigateBack({
+        delta:1
+      });
+    }else{
+      alert("同意协议后才能接单出车。")
+    }
+  });
+  
+  // 接单出车
+  down.addEventListener('click', function() {
+      wx.miniProgram.postMessage({
+        data:{
+          detail:true,
+          down:true
+        }
+      })
+      wx.miniProgram.navigateBack({
+        delta:1
+      });
+  });
+});
+
+}
+</script>
+</body>
+</html>
