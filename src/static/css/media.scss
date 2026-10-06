@@ -1,0 +1,13 @@
+/*
+ *   屏幕适配样式文件
+*/
+
+@media screen and (max-width:1660px){
+    .search-list{
+      .search-form{
+        .item.daterange{
+          width: 50%;
+        }
+      }
+    }
+  }

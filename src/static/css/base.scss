@@ -1,0 +1,161 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+button,
+select,
+option,
+textarea,
+p,
+blockquote,
+th,
+td {
+  padding: 0px;
+  margin: 0px;
+  font: 12px/20px "Microsoft YaHei", "Arial";
+  color: $font-color;
+}
+html,body,#app{
+  height: 100%;
+}
+body {
+  background: $bg-color;
+}
+
+em,
+i {
+  font-style: normal;
+}
+
+li {
+  list-style-type: none;
+}
+
+.clear {
+  clear: both;
+  float: none;
+  border: medium none;
+  line-height: 1px;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f83148;
+  text-decoration: underline
+}
+
+a.link{
+  color: $main-color;
+  text-decoration: underline;
+  cursor: pointer;
+}
+a.disabled{
+  color: grey;
+  text-decoration: underline;
+  cursor:not-allowed
+}
+.txt_overHide{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.fl {
+  float: left !important;
+}
+
+.fr {
+  float: right !important;
+}
+.fw{
+  font-weight: bold;
+}
+
+em {
+  color: red;
+}
+.red{
+  color: red!important;
+}
+
+img {
+  border: none
+}
+
+.w_auto{
+  width: auto!important;
+}
+
+.txt_c{
+  text-align: center!important;
+}
+
+// 边距配置
+.pt_20{
+  padding-top: 20px;
+}
+.pb_20{
+  padding-bottom: 20px;
+}
+.mt_20{
+  margin-top: 20px;
+}
+.mb_20{
+  margin-bottom: 20px;
+}
+.mr_10{
+  margin-right: 10px;
+}
+.ml_10{
+  margin-left: 10px;
+}
+input::-webkit-input-placeholder { 
+/* WebKit browsers */ 
+color: #ccc; 
+font-size: 12px;
+} 
+input:-moz-placeholder { 
+/* Mozilla Firefox 4 to 18 */ 
+color: #ccc; 
+font-size: 12px;
+} 
+input::-moz-placeholder { 
+/* Mozilla Firefox 19+ */ 
+color: #ccc; 
+font-size: 12px;
+} 
+input:-ms-input-placeholder { 
+/* Internet Explorer 10+ */ 
+color: #ccc; 
+font-size: 12px;
+}

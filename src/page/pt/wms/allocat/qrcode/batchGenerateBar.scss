@@ -1,0 +1,48 @@
+.batchGenerateBarPage {
+    .common-info {
+        padding: 10px 20px;
+        height: 100%;
+        box-sizing: border-box;
+
+        .fillTbale {
+            .labelSpec {
+                background: #f3f9ff;
+                font-weight: bold;
+            }
+
+            /deep/ .el-textarea__inner {
+                border: none;
+                resize: none;
+                height: 115px;
+            }
+        }
+
+        h3 {
+            line-height: 40px;
+            font-weight: bold;
+            color: #333;
+            font-size: 14px;
+
+            em {
+                font-size: 12px;
+            }
+
+            /deep/ .el-checkbox__label {
+                font-size: 14px;
+                font-weight: bold;
+                color: #333;
+            }
+        }
+
+        .tableItem {
+            height: calc(100% - 200px);
+            /deep/ .tableCommon {
+                border: $border;
+
+                .el-input__inner {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,405 @@
+.warehousingCenterBoardPage {
+  padding-right: 20px;
+  background: linear-gradient(135deg, #0a1f44 0%, #022567 50%, #051b43 100%);
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Arial', 'Microsoft YaHei', sans-serif;
+
+  &.isFullScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    height: 100vh;
+    width: 100vw;
+    padding-right: 0;
+  }
+
+  // 标题区域样式优化
+  /deep/ .title {
+    padding: 1vh 0.3vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+
+    .logo {
+      height: 5vh;
+      position: absolute;
+      left: 2vw;
+      top: 50%;
+      transform: translateY(-50%);
+      filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.3));
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-50%) scale(1.05);
+      }
+    }
+
+    h3 {
+      line-height: 6vh;
+      text-align: center;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.8vw;
+      background: linear-gradient(45deg, #00ffff, #0099ff, #00ffff);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradientShift 3s ease-in-out infinite;
+      text-shadow: 0 0 20px rgba(0, 150, 255, 0.3);
+      margin: 0;
+      letter-spacing: 2px;
+    }
+
+    .time {
+      position: absolute;
+      right: 7vw;
+      bottom: 2.6vh;
+      font-size: 1vw;
+      color: #00ffff;
+      font-weight: 500;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+      font-family: 'Digital', 'Courier New', monospace;
+      letter-spacing: 1px;
+    }
+
+    .fullscreenIcon {
+      font-size: 1.8vw;
+      position: absolute;
+      top: 50%;
+      right: 2vw;
+      color: #fff;
+      cursor: pointer;
+      transform: translateY(-50%);
+      transition: all 0.3s ease;
+      text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+
+      &:hover {
+        color: #00ffff;
+        transform: translateY(-50%) scale(1.1);
+        filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.8));
+      }
+    }
+
+    .el-icon-full-screen {
+      font-size: 1.8vw;
+      position: absolute;
+      top: 50%;
+      right: 2vw;
+      color: #fff;
+      cursor: pointer;
+      transform: translateY(-50%);
+      transition: all 0.3s ease;
+      text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+
+      &:hover {
+        color: #00ffff;
+        transform: translateY(-50%) scale(1.1);
+        text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+      }
+    }
+
+    .el-icon-refresh-right {
+      font-size: 1.8vw;
+      position: absolute;
+      top: 50%;
+      right: 4.5vw;
+      color: #fff;
+      cursor: pointer;
+      transform: translateY(-50%);
+      transition: all 0.3s ease;
+      text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+
+      &:hover {
+        color: #00ffff;
+        transform: translateY(-50%) rotate(90deg) scale(1.1);
+        text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+      }
+
+      &:active {
+        transform: translateY(-50%) rotate(360deg) scale(1);
+      }
+    }
+  }
+
+  // 物料统计区域布局
+  .materialView {
+    display: flex;
+    height: 30vh;
+    gap: 1vw;
+    padding: 1vh 1vw 0 1vw;
+
+    .infoView {
+      flex: 1;
+    }
+
+    .chartView {
+      flex: 1;
+    }
+  }
+
+  // 趋势图区域布局
+  .trendView {
+    display: flex;
+    height: 28vh;
+    gap: 1vw;
+    padding: 1vh 1vw;
+
+    .chartView {
+      flex: 1;
+    }
+  }
+
+  // 底部区域布局优化
+  .bottomView {
+    height: 26vh;
+    padding: 1vh 1vw;
+
+    .chartView {
+      height: 100%;
+    }
+  }
+
+  // 通用卡片样式
+  .infoView,
+  .chartView {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #00ffff, transparent);
+      animation: scanLine 3s ease-in-out infinite;
+    }
+
+    &:hover {
+      border-color: rgba(0, 255, 255, 0.4);
+      box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(0, 255, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .contentTitle {
+      font-size: 1vw;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 12px;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+      padding-bottom: 8px;
+      border-bottom: 2px solid rgba(0, 255, 255, 0.3);
+      background: linear-gradient(90deg, #00ffff, #0099ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  // 信息卡片特殊样式
+  .infoView {
+    .dataView {
+      display: flex;
+      flex-direction: column;
+    }
+    .itemView{
+      display: flex;
+      gap: 0.7vw;
+    }
+
+    .item {
+      flex: 1;
+      text-align: center;
+      margin: 10px 0;
+      padding: 12px 8px;
+      background: rgba(0, 255, 255, 0.05);
+      border-radius: 8px;
+      border: 1px solid rgba(0, 255, 255, 0.2);
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba(0, 255, 255, 0.1);
+        border-color: rgba(0, 255, 255, 0.4);
+        transform: scale(1.02);
+      }
+
+      .title {
+        font-size: 0.9vw;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 1vh;
+        font-weight: 500;
+      }
+
+      .num {
+        line-height: 1;
+        font-size: 1.6vw;
+        font-weight: bold;
+        color: #00ffff;
+        text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+        font-family: 'Digital', 'Courier New', monospace;
+      }
+    }
+  }
+
+  // 图表容器样式
+  .lineCharts {
+    width: 100%;
+    height: calc(100% - 40px);
+    min-height: 160px;
+    border-radius: 12px;
+    background:
+      linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 20, 40, 0.3) 100%),
+      rgba(10, 22, 40, 0.5);
+    border: 1px solid rgba(0, 255, 255, 0.15);
+    box-shadow:
+      inset 0 2px 10px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(0, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+
+    // 网格背景
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+        linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 20px 20px;
+      pointer-events: none;
+    }
+
+    // 角落装饰
+    &::after {
+      content: '';
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 8px;
+      height: 8px;
+      background: #00ffff;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+    }
+  }
+
+  // 动画定义
+  @keyframes gradientShift {
+
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes scanLine {
+    0% {
+      left: -100%;
+      opacity: 0;
+    }
+
+    20% {
+      opacity: 0.6;
+    }
+
+    80% {
+      opacity: 0.6;
+    }
+
+    100% {
+      left: 100%;
+      opacity: 0;
+    }
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: translateY(-50%) rotate(0deg);
+    }
+
+    100% {
+      transform: translateY(-50%) rotate(360deg);
+    }
+  }
+
+  @keyframes gradientBorder {
+
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  // 响应式设计
+  @media (max-width: 1200px) {
+
+    .contentView,
+    .bottomView {
+      gap: 15px;
+    }
+
+    /deep/ .title h3 {
+      font-size: 2vw;
+    }
+
+    .infoView .item .num {
+      font-size: 1.8vw;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding-right: 10px;
+
+    .contentView {
+      flex-direction: column;
+      height: auto;
+      gap: 15px;
+      padding: 15px 15px 0 15px;
+    }
+
+    .bottomView {
+      flex-direction: column;
+      height: auto;
+      gap: 15px;
+      padding: 0 15px 15px 15px;
+    }
+
+    /deep/ .title h3 {
+      font-size: 3vw;
+    }
+
+    .infoView .item .num {
+      font-size: 2.5vw;
+    }
+  }
+}

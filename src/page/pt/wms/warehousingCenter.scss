@@ -1,0 +1,293 @@
+.warehousingCenterPage{
+  padding-right: 20px;
+  .infoView{
+    margin-bottom: 12px;
+    .item{
+      float: left;
+      width: 19%;
+      margin-right: 1.25%;
+      box-sizing: border-box;
+      padding: 15px 20px;
+      border-radius: 6px;
+      background: #fff;
+      position:relative;
+      height: 120px;
+      &:last-child{
+        margin:0;
+      }
+      &.warehouse{
+        background: $nav-color;
+        .title{
+          color: #fff;
+          line-height: 25px;
+          padding-right: 25px;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+          img{
+            width: 25px;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            cursor: pointer;
+          }
+        }
+        .name{
+          margin-top: 28px;
+          font-size: 1vw;
+          color: #fff;
+          position: absolute;
+          left: 20px;
+          bottom: 1.6vw;
+        }
+        .phone{
+          margin-top: 5px;
+          font-size: 0.9vw;
+          color: #fff;
+          position: absolute;
+          left: 20px;
+          bottom: 0.3vw;
+        }
+        // .qrCodeIcon{
+        //   width: 25px;
+        //   position: absolute;
+        //   bottom: 48px;
+        //   right: 20px;
+        //   cursor: pointer;
+        //   background: #fff;
+        //   border-radius: 50%;
+        //   padding: 3px;
+        //   box-sizing: border-box;
+        // }
+        // .changeIcon{
+        //   width: 25px;
+        //   position: absolute;
+        //   bottom: 15px;
+        //   right: 20px;
+        //   cursor: pointer;
+        // }
+        /deep/ .iconList{
+          position: absolute;
+          bottom: 15px;
+          left: 20px;
+          .wanring{
+            display: inline-block;
+            position: relative;            
+            .numTip{
+              border-radius: 50%;
+              position: absolute;
+              top: -12px;
+              right: 3px;
+              cursor: pointer;
+              background: #faa05a;
+              color: #fff;
+              font-size: 12px;
+              z-index: 9;
+              zoom: 0.8;
+              width: 28px;
+              height: 28px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: none;
+            }
+          }
+          .icon{
+            width: 25px;
+            border-radius: 50%;
+            margin-right: 15px;
+            cursor: pointer;
+            &.qrCodeIcon{
+              background: #fff;
+            }
+          }
+          .el-popover{
+            padding: 0;
+            max-width: 80px;
+            .worklist{
+              .workItem{
+                padding: 5px 20px;
+                text-align: center;
+                border-bottom:$border;
+                cursor: pointer;
+                line-height: 24px;
+                &:last-child{
+                  border: none;
+                }
+                &:hover{
+                  background-color: #f8f8f8;
+                }
+              }
+            }
+          }
+        }
+      }
+      .title{
+        font-size: 18px;
+      }
+      .data{
+        margin-top: 10px;
+        .icon{
+          display: inline-block;
+          padding: 8px;
+          border-radius: 50%;
+          background: #e3e8ff;
+          width: 25px;
+          height: 25px;
+          vertical-align: middle;
+          img{
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .num{
+          display: inline-block;
+          font-weight: bold;
+          font-size: 1.3vw;
+          margin-left: 12px;
+          vertical-align: middle;
+        }
+        .unit{
+          display: inline-block;
+          font-weight: bold;
+          font-size: 1vw;
+          margin-left: 8px;
+          vertical-align: middle;
+        }
+      }
+      .link{
+        position: absolute;
+        bottom: 15px;
+        right: 20px;
+        color: #999;
+        font-size: 0.7vw;
+        cursor: pointer;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .menusView{
+    width: 420px;
+    float: right;
+    .menusItem{
+      background: #fff;
+      padding: 0 15px;
+      margin-bottom: 12px;
+      .title{
+        line-height: 35px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      .menus{
+        width: 100%;
+        li{
+          float: left;
+          width: 23%;
+          margin-left: 1.5%;
+          margin-bottom: 12px;
+          background: #edf8fe;
+          border-radius: 10px;
+          box-shadow: rgba(0,0,0,0.4) 1px 1px 0px 0px;
+          text-align: center;
+          padding: 10px 0;
+          cursor: pointer;
+          &:nth-child(4n){
+            margin-right: 0!important;
+          }
+          img{
+            width: 36px;
+            height: 36px;
+            // margin-bottom: 10px;
+          }
+          p{
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+  .chartView{
+    float: left;
+    width: calc(100% - 440px);
+    .item{
+      float: left;
+      width: 49%;
+      margin-right: 2%;
+      margin-bottom: 12px;
+      background: #fff;
+      &:nth-child(2n){
+        margin-right: 0;
+      }
+      .title{
+        padding: 8px 10px;
+        border-bottom: $border;
+        h5{
+          padding-left: 10px;
+          position: relative;
+          font-size: 14px;
+          color: #333;
+          line-height: 30px;
+          float: left;
+          &::after{
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 0;
+            width: 4px;
+            height: 20px;
+            background: $main-color;
+          }
+        }
+        .tab{
+          float: right;
+          li{
+              float: left;
+              border:$border;
+              width: 70px;
+              line-height: 30px;
+              font-size: 14px;
+              text-align: center;
+              cursor: pointer;
+              &:first-child{
+                  border-radius: 5px 0px 0px 5px;
+              }
+              &:last-child{
+                  border-radius: 0 5px 5px 0;
+              }
+              &:hover,&.active{
+                  border-color: $main-color;
+                  background: $main-color;
+                  color: #fff;
+              }
+          }
+        }
+      }      
+      .lineCharts{
+        height: 244px;
+        width: 100%;
+      }
+    }
+  }
+}
+// @media screen and (max-width:1500px){
+//   .warehousingCenterPage{
+//       .menusView{
+//           width: 100%;
+//           .menusItem{
+//             float: left;
+//             width: 49%;
+//             margin-right: 2%;
+//             box-sizing: border-box;
+//             &:last-child{
+//               margin-right: 0;
+//             }
+//           }
+//       }
+//       .chartView{
+//         width: 100%;
+//       }
+//   }
+// }

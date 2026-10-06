@@ -1,0 +1,106 @@
+@mixin circle($width,$color) {
+    width:$width;
+    height: $width;
+    background: $color;
+    border-radius: 50%;
+}
+
+//三角形
+@mixin trigon($width,$color,$direction){
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: $width;
+    @if $direction==top{
+        border-color: $color transparent transparent transparent;
+    }@else if $direction==right{
+        border-color: transparent $color transparent transparent;
+    }@else if $direction==bottom{
+        border-color: transparent transparent $color transparent;
+    }@else if $direction==left{
+        border-color: transparent transparent transparent $color;
+    }
+}
+
+//文字溢出隐藏
+@mixin textoverflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+//旗帜标记
+@mixin flag($color){
+    width: 30px;
+    height: 33px;
+    position: relative;
+    border-radius: 5px;
+    background: $color;
+    color: #fff;
+    font-size: 10px;
+    text-align: center;
+    word-break: break-all;
+    white-space: initial;
+    line-height: 1;
+    &::before{
+        content: "";
+        position: absolute;
+        bottom:-2px;
+        left: 5px;
+        transform: scaleX(1.2) scaleY(0.9);
+        @include trigon(10px,#fff,bottom);
+    }
+}
+
+// 添加
+@mixin add{
+    width: 20px;
+    height: 20px;
+    background: $main-color;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    &::before{
+        content: '';
+        width: 10px;
+        height: 0;
+        position: absolute;
+        left: 5px;
+        top: 9px;
+        border-top: 2px solid #fff;
+    }
+    &::after{
+        content: '';
+        width: 0;
+        height: 10px;
+        position: absolute;
+        left: 9px;
+        top: 5px;
+        border-left: 2px solid #fff;
+    }
+    &:hover{
+        background: $main-color-hover;
+    }
+}
+
+// 删除
+@mixin del{
+    width: 20px;
+    height: 20px;
+    background:#ff0000;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    &::before{
+        content: '';
+        width: 10px;
+        height: 0;
+        position: absolute;
+        left: 5px;
+        top: 9px;
+        border-top: 2px solid #fff;
+    }
+    &:hover{
+        background: #fa2e2e;
+    }
+}

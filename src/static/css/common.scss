@@ -1,0 +1,1071 @@
+
+//公用背景
+.popup{
+  position: fixed;
+  height: 100%;
+  width:100%;
+  top:0;
+  left:100%;
+  z-index: 999;
+  transition: all 0.5s;
+  &.show{
+    left: 0;
+  }
+  .popup_bj{
+    position: initial;
+  }
+}
+.popup_bj{
+  position: fixed;
+  background: rgba(0,0,0,0.5);
+  height: 100%;
+  width:100%;
+  top:0;
+  left:0;
+  z-index: 999;
+}
+.popup_content{
+  height: 100%;
+  overflow:auto;
+  width: 70%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #fff;
+  z-index: 1000;
+}
+
+//查询页公用样式
+.search-list {
+  background: #fff;
+  border: $border;
+  position: relative;
+  // height: 35px;
+  .search-form {
+    border-radius: 3px;
+    float: left;
+    width: calc(100% - 190px);
+    border-right: $border;
+    box-sizing: border-box;
+    overflow: hidden;
+    // height: 35px;
+    // &:hover{
+    //   height: auto;
+    //   overflow: initial;
+    //   position: absolute;
+    //   background: #fff;
+    //   z-index: 1000;
+    //   box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    // }
+    .item {
+      width: 25%;
+      float: left;
+      position: relative;
+      height: 35px;
+      display: flex;
+
+      &::before {
+        content: "";
+        position: absolute;
+        border-bottom: 1px dashed $border-color;
+        bottom: -1px;
+        left:0;
+        height: 1px;
+        width: 100%;
+        z-index: 9;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        border-right: 1px dashed $border-color;
+        right: -1px;
+        top: 20%;
+        height: 60%;
+        z-index: 9;
+      }
+        .label {
+          display: block;
+          text-align: right;
+          line-height: 35px;
+          width: 100px;
+          padding-right: 10px;
+          padding-left: 5px;
+          box-sizing: border-box;
+          position: relative;
+          .el-input--suffix{
+            .el-input__inner{
+              border:none;
+              padding-right: 20px;
+            }
+          }
+          .el-select .el-input .el-select__caret{
+            width:15px
+          }
+          .el-icon-question{
+            position: absolute;
+            top: 4px;
+            right: 3px;
+            font-size: 14px;
+            cursor: pointer;
+          }
+        }
+        .input-text {
+          flex: 1;
+          .inner-text{
+            line-height: 35px;
+            padding:0 15px;
+          }
+        }
+      .el-input__inner {
+        width: 100%;
+        box-sizing: border-box;
+        border: none;
+        height: 35px;
+        line-height: 35px;
+        &:focus {
+          background: $focus-color;
+        }
+      }
+      .el-date-editor{
+        padding-top: 0;
+        padding-bottom: 0;
+        width:100%;
+        .el-input__inner{
+          padding-left: 35px;
+        }
+      }
+      .el-date-editor {
+        .el-range-separator{
+          line-height: 35px;
+        }
+        .el-range-input{
+          font-size: 12px;
+        }
+        .el-input__icon{
+          line-height: 35px;
+        }
+      }
+      .el-select{
+        width:100%;
+        .el-input__icon{
+          line-height: 35px;
+        }
+      }
+    }
+    .item2row{
+      width: 50%;
+    }
+    .item100{
+      width: 100%;
+    }
+  }
+  .search-btn{
+    width:190px;
+    padding:5px 0;
+    float: left;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    .btn{
+      width: 50%;
+      padding:0 10px;
+      box-sizing: border-box;
+      float: left;
+      &:first-child{
+        border-right: $border;
+      }
+    }
+  }
+  .search-bot{
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    width: 30px;
+    height: 0px;
+    margin-left: -30px;
+    z-index: 99;
+    cursor: pointer;
+    display: none;
+    border-top: 8px solid #fff;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    line-height: 8px;
+    &:hover{
+      border-color: #fafafa;
+      border-left-color: transparent;
+      border-right-color: transparent;
+    }
+    img{
+      width: 100%;
+      height: 100%;
+      display: none;
+    }
+    .icon{
+      position: absolute;
+      left: 50%;
+      top: -10px;
+      margin-left: -6px;
+      &.el-icon-arrow-up{
+        display: none;
+      }
+    }
+  }
+}
+
+.table-content{
+  border:$border;
+  background: #fff;
+  margin-top: 10px;
+  .table-title{
+    height: 50px;
+    padding-right: 12px;
+    position: relative;
+    z-index: 9;
+    h3{
+      color: $main-color;
+      font-size: 14px;
+      font-weight: 700;
+      padding-left: 40px;
+      float: left;
+      position: relative;
+      line-height: 50px;
+      &::before{
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: $main-color;
+        position: absolute;
+        top:20px;
+        left:20px;
+      }
+      .tip{
+        width: 20px;
+        margin-left: 20px;
+        vertical-align: middle;
+        cursor: pointer;
+      }
+    }
+    .table-title-btn{
+      padding: 11px 0 0 5px;
+      right: 7px;
+      height: 40px;
+      overflow: hidden;
+      box-sizing: border-box;
+      text-align: right;
+      .el-button{
+        margin-left: 10px;
+        margin-bottom: 10px;
+      }
+      .switchDiv{
+        background: #fff;
+      }
+      &:hover{
+        height: auto;
+        background: rgba(255,255,255,0.7);
+        border-radius: 5px;
+        border-top: none;
+      }
+    }
+    .tab-title{
+      float: left;
+      padding:11px 0;
+      .tab{
+        float: left;
+        width: 100px;
+        text-align: center;
+        position: relative;
+        line-height: 30px;
+        margin-left: 10px;
+        cursor: pointer;
+        &.active,&:hover{
+          color: $main-color;
+          &::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: $main-color;
+            left: 0;
+            bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//公用标题框
+.common-title{
+  padding:5px;
+  background: #f7fafd;
+  position: relative;
+  .title-name{
+    line-height: 30px;
+    color:$main-color;
+    position: relative;
+    padding-left: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    &::before{
+      content: "";
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      background: $main-color;
+      position: absolute;
+      left:10px;
+      top:5px;
+    }
+  }
+}
+
+//新增、信息页
+.common-info {
+  padding: 30px 20px 60px;
+  border: $border;
+  border-radius: 3px;
+  background: #fff;
+
+  // .common-title {
+  //     padding: 5px;
+
+  //     .title-name {
+  //         font-size: 20px;
+  //         padding-left: 20px;
+  //         line-height: 20px;
+
+  //         &::before {
+  //             top: 6px;
+  //             left: 5px;
+  //         }
+  //     }
+  // }
+
+  .content {
+      >.item {
+          display: block;
+          margin-bottom: 10px;
+          float: left;
+          width: 23%;
+          min-width: 240px;
+          margin-right: 2%;
+
+          .label-term {
+              float: left;
+              width: 88px;
+              height: 40px;
+              padding-right: 10px;
+              display: flex;
+              display: -webkit-flex;
+              align-items: center;
+              justify-content: flex-end;
+              text-align: right;
+          }
+
+          .input-text {
+              float: left;
+              width: calc(100% - 98px);
+              line-height: 40px;
+              position: relative;
+
+              .el-select {
+                  width: 100%;
+                  .el-input__icon{
+                    line-height: 40px;
+                  }
+              }
+
+              .lint {
+                  position: absolute;
+                  line-height: 40px;
+                  color: $main-color;
+                  text-decoration: underline;
+                  top: 0;
+                  right: 5px;
+              }
+              .unit {
+                  position: absolute;
+                  line-height: 40px;
+                  top: 0;
+                  right: 5px;
+              }
+
+              .el-checkbox-group{
+                line-height: 40px;
+              }
+              .el-date-editor.el-input{
+                width: 100%;
+              }
+          }
+          .input-range{
+            border:$border;
+            border-radius: 3px;
+            box-sizing: border-box;
+            .el-input{
+                width:auto;
+            }
+            .el-input__inner{
+                border:none;
+                width:120px;
+            }
+        }
+      }
+      .item50{
+        width: 48%;
+        margin-right: 2%;
+      }
+      .item80{
+        width: 80%;
+      }
+      .item90{
+        width: 90%;
+      }
+      .item98{
+        width: 98%;
+      }
+      .item100{
+        width: 100%;
+      }
+      .img-upload {
+          .label-term {
+              line-height: 20px;
+              margin-top: 40px;
+          }
+      }
+      &.content-text{
+        .label-term{
+          text-align: right;
+        }
+      }
+      .el-textarea__inner{
+        width: 400px;
+      }
+  }
+
+  &.flex{
+    .content {
+      >.item {
+        display: flex;
+        .label-term{
+          width: 78px;
+        }
+        .input-text{
+          flex: 1;
+        }
+      }
+    }    
+  }
+
+}
+.bot-btn {
+    text-align: center;
+    margin-top: 40px;
+    position: relative;
+    z-index: 999;
+    .el-button {
+        min-width: 120px;
+    }
+}
+.page-bot-btn {
+  text-align: center;
+  margin-top: 30px;
+  padding-right: 30px;
+  box-sizing: border-box;
+  .el-button {
+      min-width: 80px;
+  }
+}
+
+//左右数据切换
+.common-switch-box {
+  width: 460px;
+  border: $border;
+  border-radius: 3px;
+  background: #fff;
+  position: absolute;
+  z-index: 9999;
+  top: 20%;
+  left: 50%;
+  margin-left: -230px;
+  .setRowTop {
+      line-height: 1;
+      padding: 11px 0;
+      text-align: center;
+      border-bottom: $border;
+      h3 {
+          font-size: 16px;
+          color: #4a5f6d;
+          margin-bottom: 12px;
+          font-weight:bold;
+      }
+  }
+  .botBtn {
+      text-align: center;
+      padding: 15px 0;
+  }
+  .flow_row {
+      width: 211px;
+      border-right: $border;
+      border-bottom: $border;
+      &:last-child {
+          border: none;
+          border-left: $border;
+          border-bottom: $border;
+      }
+  }
+  .selet_all {
+      padding: 11px 20px;
+      background: #f5f8fc;
+      height: 41px;
+      border-bottom: $border;
+      box-sizing: border-box;
+  }
+  .select_list {
+      padding: 10px 10px 10px 20px;
+      height: 280px;
+      overflow: auto;
+      position: relative;
+      .el-checkbox{
+          display: block;
+          line-height: 30px
+      }
+  }
+  .screen_row {
+      position: relative;
+      margin-bottom: 12px;
+      &::before {
+          content: "";
+          width: 17px;
+          height: 17px;
+          position: absolute;
+          top: 10px;
+          right: 12px;
+          background-position: -175px 0;
+      }
+  }
+  .sure_select {
+      position: absolute;
+      top: 160px;
+      left: 50%;
+      margin-left: -14px;
+      .el-button--mini{
+          padding: 3px 7px;
+          display: block;
+          margin:0 0 10px 0;
+      }
+  }
+}
+
+// 公用表格样式
+
+
+.tableCommon {
+  position: relative;
+  z-index: 1;
+  border-collapse: collapse;
+  border: none;
+  table-layout: fixed;
+  &.tableCommonFix{
+    th{
+      border-right: 1px solid #fff!important;
+    }
+    td{
+        border-right: 1px solid #c9d7ea!important;
+    }
+  }
+  .fixed-thead{
+    table-layout: fixed;
+    display: inherit;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+    box-sizing: border-box;
+  }
+  thead {
+
+      tr {
+          background: $border-color;
+          th {
+              font-size: 12px;
+              padding: 0 5px;
+              text-align: center;
+              box-sizing: border-box;
+              white-space: nowrap;
+              line-height: 30px;
+              height: 30px;
+              border-right: 1px solid #fff;
+              border-bottom: 1px solid #fff;
+              font-weight: bold;
+              //&:last-child{
+              //  border-right: none;
+              //}
+          }
+      }
+  }
+
+  .fixed-tbody{
+    table-layout: fixed;
+    display: inherit;
+    margin: 30px 0;
+    width: 100%;
+  }
+  tbody,tfoot {
+
+      tr {
+          background: #fff;
+          position: relative;
+          cursor: pointer;
+
+          &:hover,&.hover{
+              background: $hover-color;
+          }
+
+          td {
+              color: #333;
+              box-sizing: border-box;
+              text-align: center;
+              height: 30px;
+              padding: 0 5px;
+              text-align: center;
+              white-space: nowrap;
+              border-right: 1px solid #c9d7ea;
+              border-bottom: 1px solid #c9d7ea;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              &:last-child{
+                border-right: none;
+              }
+              .el-input__inner{
+                height: 28px;
+              }
+              .el-input__icon{
+                line-height: 28px;
+              }
+          }
+      }
+  }
+  .fixed-tfoot{
+    height: 30px;
+    background: #fff;
+    position: absolute;
+    bottom: 0px;
+    table-layout: fixed;
+    display: inherit;
+    z-index: 99;
+    border-top: $border;
+    width: 100%;
+    text-align: center;
+    td{
+        border-right:$border;
+        border-bottom: $border;
+        box-sizing: border-box;
+    }
+  }
+
+  .checkbox_row {
+      pointer-events: none;
+  }
+}
+
+//列表选择弹框
+.selectAlertBox{
+  position: absolute;
+  width: 260px;
+  border:$border;
+  border-radius: 3px;
+  z-index: 999;
+  background: #fff;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.17);
+  .title{
+      font-size: 14px;
+      text-align: center;
+      position: relative;
+      line-height: 32px;
+      border-bottom:$border;
+      padding:6px 0;
+      .add{
+          height: 16px;
+          width: 16px;
+          border: $border;
+          border-radius: 2px;
+          cursor: pointer;
+          position: absolute;
+          top: 14px;
+          left: 15px;
+          &::before{
+              content: "";
+              width: 10px;
+              height: 2px;
+              background: $border-color;
+              position: absolute;
+              top: 7px;
+              left: 3px;
+          }
+          &::after{
+              content: "";
+              width: 2px;
+              height: 10px;
+              background: $border-color;
+              position: absolute;
+              top: 3px;
+              left: 7px;
+          }
+      }
+  }
+  .list{
+      li{
+          height: 32px;
+          line-height: 32px;
+          border-bottom: $border;
+          padding-left: 20px;
+          text-align: left;
+          cursor: pointer;
+          &:hover{
+              background: $hover-color;
+          }
+          .del{
+              height: 16px;
+              width: 16px;
+              border: $border;
+              border-radius: 2px;
+              position: relative;
+              float: right;
+              margin: 7px 10px 0 0;
+              &::before{
+                  content: "";
+                  width: 10px;
+                  height: 2px;
+                  background: $border-color;
+                  position: absolute;
+                  top: 7px;
+                  left: 3px;
+              }
+              &:hover{
+                  background: $tip-color;
+              }
+          }
+          .el-input__inner{
+              height: 24px!important;
+              width: 150px!important;
+              border:$border;
+              border-radius: 0;
+              text-align: left;
+              margin-top: 4px;
+          }
+      }
+  }
+  .operateIcon{
+      margin-top: 5px;
+      span{
+          float: left;
+          border:1px solid $main-color;
+          margin-right: 10px;
+          height: 20px;
+          width: 20px;
+          text-align: center;
+          i{
+              color:$main-color;
+              font-size: 14px;
+              font-weight: bold;
+          }
+          &:hover{
+              background: $main-color;
+              i{
+                  color:#fff;
+              }
+          }
+      }
+  }
+  .editBtn{
+    text-align: center;
+    margin:10px 0;
+  }
+}
+
+//el-dialog样式重写优化
+.el-dialog__header{
+  border-bottom:$border;
+}
+.el-dialog__body{
+  .common-info .content .el-textarea__inner{
+    width:100%;
+  }
+  .tableCommon{
+    table-layout: auto;
+  }
+}
+
+// 导入文件
+.uploadCommon{
+  .uploadContent{
+    background-color: #fff;
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    box-sizing: border-box;
+    width: 250px;
+    // height: 150px;
+    padding-bottom: 20px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    &:hover{
+      border-color: $main-color;
+    }
+    .el-icon-upload{
+        font-size: 100px;
+        color: #c0c4cc;
+        margin: 20px 0 10px;
+        line-height: 50px;
+    }
+    .uploadText{
+      color: $main-color;
+      line-height: 25px;
+    }
+    .uploadTips{
+      // color:red;
+    }
+  }
+  .uploadList{
+    width: 250px;
+    margin:10px auto;
+    li{
+      color: #606266;
+      padding-right: 40px;
+      overflow: hidden;
+      padding-left: 4px;
+      text-overflow: ellipsis;
+      transition: color .3s;
+      white-space: nowrap;
+      box-sizing: border-box;
+      position: relative;
+      &:hover{
+        background-color: #f5f7fa;
+        .el-icon-close{
+          display: block;
+        }
+      }
+      [class^=el-icon]{
+        height: 100%;
+        margin-right: 7px;
+        color: #909399;
+        line-height: inherit;
+      }
+      .el-icon-close{
+        position: absolute;
+        display: none;;
+        top: 2px;
+        right: 5px;
+        cursor: pointer;
+        opacity: .75;
+        color: #606266;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+// 填入式表格
+.fillTbale{
+  width: 100%;
+  border-top:$border;
+  border-left: $border;
+  td{
+    border-right: $border;
+    border-bottom: $border;
+    text-align: center;
+    height: 35px;
+    .el-input,.el-select{
+      width: 100%;
+    }
+    .el-input__inner{
+      border:none;
+    }
+    &.label{
+      background: $bg-color;
+      width: 100px;
+      em{
+        font-size: 20px;
+        font-weight: bold;
+        vertical-align: middle;
+      }
+    }
+    &.value{
+      width: 150px;
+    }
+  }
+}
+// 填入式表格
+.fillTable{
+  width: 100%;
+  border-top:$border;
+  border-left: $border;
+  td{
+    border-right: $border;
+    border-bottom: $border;
+    text-align: center;
+    height: 35px;
+    .el-input,.el-select{
+      width: 100%;
+    }
+    .el-input__inner{
+      border:none;
+    }
+    &.label{
+      background: $border-color;
+      width: 24px;
+      em{
+        font-size: 20px;
+        font-weight: bold;
+        vertical-align: middle;
+      }
+    }
+    &.value{
+      width: 150px;
+    }
+  }
+}
+
+// 日志记录公用样式
+.logListCommon{
+  .title{
+    background: $main-color;
+    margin-bottom: 10px;
+    &>div{
+      color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 30px;
+      box-sizing: border-box;
+    }
+  }
+  .content{
+    position: relative;
+    &::after{
+      content: "";
+      position: absolute;
+      width: 0;
+      height: calc(100% - 30px);
+      top:11px;
+      left: 45%;
+      border-left: $border;
+    }
+  }
+  .item{
+    position: relative;
+    z-index: 9;
+    &>div{
+      box-sizing: border-box;
+      font-size: 14px;
+      line-height: 24px;
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
+    &.first{
+      &>div{
+        font-weight: bold;
+      }
+      &::before{
+        background: $main-color;
+        width: 15px;
+        height: 15px;
+        left:calc(45% - 7px);
+        top: 11px;
+      }
+    }
+    &::before{
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: $border-color;
+      position: absolute;
+      top: 14px;
+      left:calc(45% - 4px);
+    }
+  }
+  .time{
+    float: left;
+    width: calc(45% - 150px);
+    text-align: right;
+    padding-right: 60px;
+  }
+  .operator{
+    float: left;
+    width: 150px;
+    font-size: 14px;
+    padding-right: 50px;
+  }
+  .news{
+    float:left;
+    width: 55%;
+    font-size: 14px;
+    padding-left: 50px;
+  }
+}
+
+// 仿qq空间查看大图右侧可以看信息模式
+.imageViewerOut{
+  .tipbox{
+    text-align: center;
+    margin-top: 20px;
+    line-height: 24px;
+    .tip{
+      width: 24px;
+      vertical-align: top;
+      margin-right: 5px;
+    }
+    .text{
+      color:$tip-color;
+      font-size: 16px;
+    }
+  }
+  .el-image-viewer__wrapper{
+    right:350px;
+  }
+  .imageViewerInfo{
+    position: fixed;
+    z-index: 2000;
+    background: #fff;
+    width: 350px;
+    height: 100%;
+    top:0;
+    right: 0;
+    .content{
+      padding: 30px 20px;
+      .item{
+        display: flex;
+        padding:10px 0;
+        .label{
+          width: 100px;
+          text-align: right;
+          font-weight: bold;
+          font-size: 14px;
+        }
+        .text{
+          font-weight: bold;
+          flex:1;
+          -webkit-flex:1;
+          font-size: 14px;
+          word-break: break-all;
+        }
+      }
+    }
+    .page-bot-btn{
+      position: absolute;
+      bottom: 50px;
+      left: 0;
+      right: 0;
+      padding: 0;
+    }
+  }
+}
