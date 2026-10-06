@@ -1,0 +1,43 @@
+.examRecordPage{
+    .common-info{
+        padding:20px;
+    }
+    .integral{
+        display: flex;
+        img{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .content{
+            margin-left: 20px;
+            .name{
+                font-size: 20px;
+                line-height: 40px;
+                margin-bottom: 4px;
+            }
+            .info{
+                span{
+                    float: left;
+                    padding-right: 20px;
+                    margin-right: 20px;
+                    border-right:$border;
+                }
+            }
+        }
+    }
+    .tipShow{
+        display: inline-block;
+        padding:0 20px;
+        background: #d8e3f9;
+        font-size: 14px;
+        $border:border;
+        line-height: 36px;
+        color: #4095e5;
+        margin-top: 10px;
+    }
+    .table-content{
+        height: calc(100% - 190px)!important;
+    }
+}

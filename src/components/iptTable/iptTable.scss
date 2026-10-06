@@ -1,0 +1,207 @@
+.el-dialog__body{
+    padding:10px 20px;
+}
+.ipt-dialog{
+    .el-dialog__footer{
+        text-align: center;
+    }
+    .dialog-calc-info{
+        margin-top: 20px;
+        .el-input{
+            width: auto;
+            margin:0 5px;
+            .el-input__inner{
+                display: inline-block;
+                height: 24px;
+                width: 50px;
+                padding:0 5px;
+                border-radius: 2px;
+                color: $main-color;
+            }
+        }
+    }
+    .tx_tc{
+        margin-bottom: 15px;
+    }    
+    .el-table__body-wrapper{
+        height: 136px!important;
+        overflow-y: auto;
+    }
+}
+
+.ipt_table_ico {
+    position: absolute;
+    right: -31px;
+    top: 30px;
+    &>li {
+        margin-top: 2px;
+        position: relative;
+        &:hover .tip {
+            display: block;
+        }
+    }
+    .ico {
+        background: $main-color;
+        height: 24px;
+        width: 24px;
+        cursor: pointer;
+        position: relative;
+        text-align: center;
+        &:hover {
+            background: $main-color-hover;
+        }
+    }
+    .ico.remove_btn::before,.ico.add_btn::before{
+        content: "";
+        width: 12px;
+        height: 2px;
+        position: absolute;
+        top: 11px;
+        left: 6px;
+        background: #fff;
+    }
+    .ico.add_btn::after {
+        content: "";
+        width: 2px;
+        height: 12px;
+        position: absolute;
+        top: 6px;
+        left: 11px;
+        background: #fff;
+    }
+    .tip {
+        background: #fff;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        left: -90px;
+        display: none;
+        z-index: 99;
+        width: 77px;
+        height: 21px;
+        border-radius: 3px;
+        text-align: center;
+        border: 2px solid $main-color;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            right: -6px;
+            border-left: 6px solid $main-color;
+            border-bottom: 6px solid transparent;
+            border-top: 6px solid transparent;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            right: -4px;
+            border-left: 6px solid #fff;
+            border-bottom: 6px solid transparent;
+            border-top: 6px solid transparent;
+        }
+    }
+}
+
+
+.el-table{
+    th,td{
+        padding:0;
+        text-align: center;
+        height: 32px;
+    }
+    .el-table__header{
+        th{
+            background: $border-color;
+            &.gutter{
+                background: #f1f1f1;
+            }
+        }
+    }
+    .el-table__footer{
+        .gutter{
+            background: #f1f1f1;
+        }
+    }
+}
+
+// 自定义字段弹窗
+.iptSetTableRow {
+    width: 460px;
+    border: $border;
+    border-radius: 3px;
+    background: #fff;
+    position: absolute;
+    z-index: 999;
+    top: -141px;
+    right: 30px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    .setRowTop {
+        line-height: 1;
+        padding: 11px 0;
+        text-align: center;
+        border-bottom: 2px solid $border-color;
+        h3 {
+            font-size: 16px;
+            color: #4a5f6d;
+            margin-bottom: 12px;
+            font-weight:bold;
+        }
+    }
+    .botBtn {
+        text-align: center;
+        padding: 15px 0;
+    }
+    .flow_row {
+        width: 211px;
+        border-right: $border;
+        border-bottom: $border;
+        &:last-child {
+            border: none;
+            border-left: $border;
+            border-bottom: $border;
+        }
+    }
+    .selet_all {
+        padding: 11px 20px;
+        background: #f5f8fc;
+        height: 41px;
+        border-bottom: $border;
+        box-sizing: border-box;
+    }
+    .select_list {
+        padding: 10px 10px 10px 20px;
+        height: 280px;
+        overflow: auto;
+        position: relative;
+        li {
+            line-height: 30px;
+            text-align: left;
+        }
+    }
+    .screen_row {
+        position: relative;
+        margin-bottom: 12px;
+    }
+    .sure_select {
+        position: absolute;
+        top: 140px;
+        left: 50%;
+        margin-left: -14px;
+        .sel_ico {
+            width: 27px;
+            height: 25px;
+            background: $main-color;
+            display: block;
+            cursor: pointer;
+            text-align: center;
+            line-height: 25px;
+            margin:10px 0;
+            >i{
+                color: #fff;
+                font-size: 14px;
+                font-weight: bold;
+            }
+        }
+    }
+}

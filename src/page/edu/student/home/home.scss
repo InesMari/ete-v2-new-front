@@ -1,0 +1,34 @@
+.studentHomePage {
+    .slide_bar {
+        background: $main-color;
+    }
+
+    .home_main_right {
+        .header {
+            display: block;
+            .headerInfo{
+                display: flex;
+                align-items: center;
+                .infoList{
+                    padding: 0 25px 0 15px;
+                }
+                .operate{
+                    padding-top: 8px;
+                }
+                .homeBtn {
+                    background: $main-color;
+                    color: #fff;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    border: none;
+                    height: 28px;
+                    margin-right: 15px;;
+    
+                    &:hover {
+                        background: $main-color-hover;
+                    }
+                }
+            }
+        }
+    }
+}

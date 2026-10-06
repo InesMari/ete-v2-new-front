@@ -1,0 +1,318 @@
+.tableCommonComponents{
+    position: relative;
+    background: #fff;
+    .table_height{
+        overflow-x: scroll;
+        overflow-y: auto;
+        width:100%;
+        position: relative;
+        min-height: 200px;
+    }
+
+    .tableCommonFix.tableCommon{
+        position: absolute;
+        left:0;
+        top:0;
+        z-index:3;
+    }
+    .tableCommonFix{
+        thead{
+            tr{
+                background: #d5d5d5;
+            }
+        }
+    }
+
+  .setTableRow {
+    position: absolute;
+    box-sizing: border-box;
+    right: 15px;
+    top: -39px;
+    z-index: 999;
+
+    .package {
+      position: absolute;
+      top: 18px;
+      right: 0;
+      background: #fff;
+      border: $border;
+      border-radius: 6px;
+      padding: 15px 20px;
+      margin-top: 10px !important;
+      text-align: left;
+      z-index: 9999;
+      min-width: 250px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+
+      &:hover {
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .listShow {
+        max-height: 300px;
+        overflow: auto;
+        margin-bottom: 15px;
+
+        /* 优化滚动条样式 */
+        &::-webkit-scrollbar {
+          width: 6px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 3px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: #c1c1c1;
+          border-radius: 3px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+          background: #a8a8a8;
+        }
+      }
+
+      .item {
+        cursor: pointer;
+        padding: 4px 8px;
+        line-height: 22px;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+        border: 1px solid transparent;
+
+        &:hover {
+          background-color: #f5f7fa;
+          border-color: #dcdfe6;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      /* 修改后 */
+      .bot_btn {
+        margin-top: 10px;
+        padding: 12px 0 0;
+        border-top: 1px solid #ebeef5;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      /* 修改后 */
+      .selectBtn {
+        display: flex;
+        justify-content: center; /* 使全选/反选居中显示 */
+        label {
+          margin: 0 12px 0 0;
+          cursor: pointer;
+
+          &:hover {
+            color: #409eff;
+          }
+        }
+      }
+
+      .button-group {
+        display: flex;
+        justify-content: center; /* 使确定/取消按钮居中显示 */
+        gap: 8px;
+      }
+
+      /* 按钮样式优化 */
+      .el-button {
+        margin-right: 8px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .tableStyle {
+    margin-right: 108px;
+    margin-bottom: -74px;
+    position: relative;
+    z-index: 10;
+    width: auto;
+  }
+
+  /* 优化拖动效果 - 让拖动块更明显 */
+  .flip-list-dragging {
+    opacity: 0.95;
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border: 2px solid #409eff;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e7ed 100%);
+    z-index: 9999;
+    transition: none;
+    animation: drag-highlight 0.6s ease-in-out infinite alternate;
+  }
+
+  @keyframes drag-highlight {
+    0% {
+      box-shadow: 0 6px 20px rgba(64, 158, 255, 0.3);
+      border-color: #409eff;
+    }
+    100% {
+      box-shadow: 0 10px 30px rgba(64, 158, 255, 0.6);
+      border-color: #66b1ff;
+      transform: scale(1.08) rotate(3deg);
+    }
+  }
+
+  /* 被拖拽元素松手后的嵌入动画 */
+  .drop-embed {
+    animation: embed-animation 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    will-change: transform, box-shadow;
+  }
+
+  @keyframes embed-animation {
+    0% {
+      transform: scale(1.05) rotate(2deg);
+      box-shadow: 0 8px 25px rgba(64, 158, 255, 0.3);
+    }
+    70% {
+      transform: scale(1.02) rotate(1deg);
+      box-shadow: 0 6px 20px rgba(64, 158, 255, 0.2);
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+
+    .table_page{
+        padding:10px;
+        .total{
+            color:$tip-color;
+        }
+        .num{
+            border:$border;
+            padding:0 5px;
+            line-height: 23px;
+            border-radius: 3px;
+            margin:0 3px;
+            display: inline-block;
+            cursor: pointer;
+            &:hover,&.active{
+                color:$main-color;
+                background: $bg-color;
+            }
+        }
+    }
+    //表格没有数据
+    .noData{
+        position: absolute;
+        width: 100%;
+        font-size: 16px;
+        color: #999;
+        top: 100px;
+        text-align: center;
+    }
+    //旗帜标识
+    .flag{
+        float:left;
+        top: -2px;
+        left: -5px;
+        @include flag(red);
+        //取件超时
+        &.pickerOvertime{
+            background: red;
+        }
+        //派送超时
+        &.dispatchOvertime{
+            background: blue;
+        }
+    }
+
+
+    //颜色配置
+    .bg_red{
+        background: red;
+    }
+    .bg_orange{
+        background: #ff6600;;
+    }
+    .bg_yellow{
+        background: #ffff66;
+    }
+
+    .fullscreen{
+        position: absolute;
+        bottom: 70px;
+        right: 10px;
+        z-index: 99;
+        width: 20px;
+        cursor: pointer;
+    }
+    &.scaleTable{
+        position: absolute;
+        top: 0;
+        z-index: 99;
+        height: 100%;
+        .table_height{
+            height: calc(100% - 55px)!important;
+        }
+    }
+    .tableCommon{
+        tr{
+            td{
+                position: relative;
+                &.showInfo{
+                    overflow: initial;
+                    span{
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        background: #fff;
+                        padding:0 10px;
+                        border-radius: 5px;
+                        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+                        white-space: nowrap;
+                        height: 30px;
+                        line-height: 30px;
+                        z-index: 9;
+                        min-width: 100%;
+                        box-sizing: border-box;
+                    }
+                }
+                .el-input__inner{
+                    text-align: center;
+                }
+            }
+        }
+        tr.disabled{
+            td{
+                color: #999!important;
+                a{
+                    color: #999!important;
+                }
+            }
+        }
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: rgb(255, 255, 255);
+        border-radius: 8px;
+      }
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: rgb(201, 201, 202);
+        border-radius: 8px;
+      }
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgb(162, 162, 163);
+      }
+}

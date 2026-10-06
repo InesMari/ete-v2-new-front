@@ -1,0 +1,72 @@
+.addPaymentOrderPage{
+    .infoTable{
+      background: #fff;
+      border-top:$border;
+      border-left: $border;
+      td{
+        height: 38px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 14px;
+        border-bottom: $border;
+        border-right: $border;
+        &.pd20{
+          padding:0 20px;
+        }
+        div{
+          font-size: 14px;
+          font-weight: bold;
+          line-height: 38px;
+          text-align: left;
+          .el-input__inner{
+            text-align: left;
+            border:none;
+          }
+        }
+        &>.el-input,&>.el-select{
+          width: 100%;
+          .el-input__inner{
+            border:none;
+            text-align: center;
+          }
+        }
+      }
+    }
+    .uploadFile{
+      padding: 20px;
+      background: #fff;
+      border:$border;
+      p{
+        text-align: center;
+      }
+      .imgList{
+        img{
+          width:110px;
+          height: 110px;
+          border-radius: 5px;
+          overflow: hidden;
+          float: left;
+          margin-left: 20px;
+        }
+      }
+      .form{
+        line-height: 110px;
+        font-weight: bold;
+        font-size: 14px;
+        button{
+          margin-left: 20px;
+        }
+      }
+    }
+
+    .auditor{
+      .item{
+        float: left;
+        line-height: 45px;
+        font-size: 14px;
+        font-weight: bold;
+        width: 25%;
+        text-align: center;
+      }
+    }
+}

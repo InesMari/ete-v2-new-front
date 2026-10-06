@@ -1,0 +1,23 @@
+.adminHomePage{
+    .slide_bar {
+        background: $main-color;
+    }
+    .home_main_right {
+        .header{
+            display: block;
+            .headerInfo{
+                display: flex;
+                align-items: center;
+                .infoList{
+                    padding: 0 25px 0 15px;
+                }
+                .operate{
+                    padding-top: 8px;
+                }
+            }
+        }
+    }
+    /deep/ .el-scrollbar__wrap{
+        overflow-x: hidden;
+    }
+}

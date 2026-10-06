@@ -1,0 +1,138 @@
+.toMainPage {
+    .homeItem {
+        border: $border;
+        background: #fff;
+        margin-bottom: 20px;
+    }
+
+    .itemTitle {
+        line-height: 50px;
+        padding-left: 30px;
+        position: relative;
+        color: $main-color;
+        font-size: 15px;
+        font-weight: bold;
+        border-bottom: 1px dashed $border-color;
+
+        &::after {
+            content: "";
+            background: $main-color;
+            position: absolute;
+            height: 8px;
+            width: 8px;
+            top: 21px;
+            left: 13px;
+            border-radius: 50%;
+        }
+    }
+
+    .overList {
+        display: flex;
+
+        .item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            border-right: 1px dashed $border-color;
+
+            &:last-child {
+                border: none;
+            }
+
+            .number {
+                color: orange;
+                font-weight: bold;
+                font-size: 30px;
+                line-height: 60px;
+            }
+
+            .name {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .catalogList {
+        display: flex;
+
+        .item {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+            cursor: pointer;
+            &:hover{
+                background: #fafafa;
+            }
+
+            .imgView {
+                display: flex;
+                width: 90px;
+                height: 100px;
+                background: #32ad32;
+                justify-content: center;
+                border-radius: 6px;
+                align-items: center;
+                img{
+                    height: 50%;
+                }
+            }
+
+            .name {
+                margin-left: 10px;
+                font-size: 16px;
+            }
+        }
+    }
+
+    .lineCharts {
+        width: 100%;
+        height: 300px;
+    }
+
+    .innerTab {
+        background: #fff;
+        display: flex;
+        margin: 10px 0 0;
+        justify-content: center;
+
+        .innerItem {
+            padding: 10px 20px 8px;
+            box-sizing: border-box;
+            float: left;
+            cursor: pointer;
+            border-bottom: 2px solid #fff;
+
+            p {
+                text-align: center;
+                position: relative;
+                font-size: 14px;
+            }
+
+            &.active,
+            &:hover {
+                border-bottom-color: $main-color;
+
+                p {
+                    color: $main-color;
+
+                    span {
+                        color: $main-color;
+                    }
+                }
+            }
+        }
+
+        .inline {
+            display: inline-block;
+
+            span {
+                font-size: 0.5rem;
+            }
+        }
+    }
+}

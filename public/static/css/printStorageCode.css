@@ -1,0 +1,45 @@
+@media print {
+    @page {
+        margin: 0;
+        padding: 0;
+        size: auto;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        color: #000;
+        height: 100vh;
+    }
+    
+    #printStorageCodeId{
+        display: block!important;
+        padding: 0;
+        margin: 0;
+    }
+    .printStorageCodeLabel{
+        width:100vw;
+        height:100vh;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .printStorageCodeLabel .img{
+        width: 100%;
+        display: block;
+        padding-top: 5vh;
+    }
+    .printStorageCodeTxtLabel{
+        font-size: 5vh;
+        text-align: center;
+        font-size: 10vh;
+    }
+    .printStorageCodeTxtLabel span{
+        display: block;
+        font-size: 5vh;
+        text-align: center;
+        font-size: 12vw;
+        line-height: 1.2;
+        margin-top: 2vh;
+    }
+}

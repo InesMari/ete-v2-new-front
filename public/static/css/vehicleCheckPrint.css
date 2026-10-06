@@ -1,0 +1,104 @@
+@media print {
+  body {
+    font-size: 12px;
+    zoom: 0.7;
+  }
+
+  td {
+    -webkit-print-color-adjust: exact;
+  }
+
+  .fillTable {
+    table-layout: fixed;
+    width: 100%;
+    border-top: 1px solid #e8e8e8;
+    border-left: 1px solid #e8e8e8;
+  }
+
+  td {
+    border-right: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+    text-align: center;
+    height: 35px;
+    padding: 3px 10px;
+  }
+
+  .label {
+    width: 24px;
+    background: #f2f2f2;
+    color: #333;
+  }
+
+  .value {
+    width: 150px;
+    color: #333;
+  }
+
+  .fw {
+    font-weight: bold !important;
+  }
+
+  .baseTitle {
+    text-align: center;
+    line-height: 45px;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .logs {
+    display: flex;
+    padding: 10px 20px;
+  }
+
+  .logs .item {
+    width: 200px;
+    margin-right: 10px;
+    position: relative;
+  }
+
+  .logs .item .stepNum {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 30px;
+    margin-right: 10px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    font-weight: bold;
+    background: #fff;
+    position: relative;
+    z-index: 9;
+  }
+
+  .logs .item .text {
+    line-height: 25px;
+  }
+
+  .logs .item:last-child .stepNum {
+    color: #67C23A;
+    border-color: #67C23A;
+  }
+
+  .logs .item:last-child::before {
+    display: none;
+  }
+
+  .logs .item::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    display: block;
+    width: calc(100% + 20px);
+    height: 2px;
+    background: #bfbfbf;
+  }
+
+  .common-title {
+    padding-left: 20px;
+    margin-top: 20px;
+  }
+}

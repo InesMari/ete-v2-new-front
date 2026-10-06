@@ -1,0 +1,172 @@
+@media print {
+  body {
+    font-size: 12px;
+    zoom:0.75;
+  }
+
+  .fw {
+    font-weight: bold;
+  }
+
+  .txt_c {
+    text-align: center;
+  }
+
+  td {
+    -webkit-print-color-adjust: exact;
+  }
+
+  .tableTitle {
+    background: #fff;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .contractTable {
+    background: #fff;
+    border-left: 1px solid #666;
+    border-top: 1px solid #666;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .contractTable .label {
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .contractTable td {
+    border-right: 1px solid #666;
+    border-bottom: 1px solid #666;
+    padding: 5px 10px;
+  }
+
+  .contractTable td .innerT {
+    display: inline-block;
+    width: 500px;
+  }
+
+  .contractTable .el-select, .contractTable .el-date-editor {
+    display: inline-block;
+  }
+
+  .contractTable td .innerLable {
+    display: inline-block;
+    width: 90px;
+  }
+
+  .contractTable td .innerIpt {
+    width: 60px;
+  }
+
+  .contractTable td .innerIpt .el-input__inner {
+    text-align: center;
+    padding-right: 0;
+    /* width: 100%; */
+  }
+
+  .contractTable td .el-input {
+    display: inline-block;
+  }
+
+  .contractTable td .el-input .el-input__inner {
+    border: none;
+    height: 28px;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .contractTable td .el-input .el-input__icon {
+    line-height: 28px;
+  }
+
+  .contractTable td .el-date-editor .el-input__inner {
+    padding-left: 30px;
+
+  }
+
+  .contractTable td .el-checkbox-group {
+    display: inline-block;
+  }
+
+  .contractTable td .el-checkbox__label {
+    font-size: 12px;
+  }
+
+  input[type=checkbox][disabled=disabled]:after {
+    width: 100%;
+    height: 100%;
+    /* top: -4px;
+    position: relative; */
+    content: "";
+    background-color: #fff;
+    color: #000;
+    display: inline-block;
+    visibility: visible;
+    border-radius: 2px;
+    border: 1px solid #A9A9A9;
+    text-align: center;
+    line-height: 1;
+  }
+
+  input[type=checkbox]:checked:after {
+    content: "\2713";
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .contractTable td .el-range-editor.el-input__inner {
+    border: none;
+  }
+
+  .contractTable .label .flexTd {
+    display: flex;
+  }
+
+  .contractTable .label .flexTd>div {
+    flex: 1;
+  }
+
+  .remarks {
+    background: #fff;
+    display: flex;
+    padding: 10px;
+
+  }
+
+  .remarks div {
+    line-height: 26px;
+  }
+
+  .uploadFile {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #efef;
+    margin-top: 20px;
+  }
+
+  .uploadFile p {
+    text-align: center;
+  }
+
+  .uploadFile .imgList img {
+    width: 110px;
+    height: 110px;
+    border-radius: 5px;
+    overflow: hidden;
+    float: left;
+    margin-left: 20px;
+  }
+
+  .uploadFile .imgList .form {
+    line-height: 110px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .uploadFile .imgList .form button {
+    margin-left: 20px;
+  }
+}

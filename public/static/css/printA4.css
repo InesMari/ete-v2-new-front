@@ -1,0 +1,45 @@
+/* 使用页面：
+ * 1、请款打印
+ * 2、付款打印
+*/
+@media print {
+    body {
+        font-size: 12px;
+        /* margin:0; */
+    }
+
+    td {
+        -webkit-print-color-adjust: exact;
+    }
+    .A5H{
+        height: 598px;
+    }
+    .A5bottom{
+        padding-bottom: 85px;
+    }
+    .verifyView{
+        zoom: 0.75!important;
+    }
+    
+    .verifyTable{
+        margin-left:10%;
+        table-layout: fixed;
+        padding:5px 0 10px;
+    }
+    .verifyTable td{
+      text-align: center;
+      font-size: 12px;
+      width: 15%;
+      font-weight: bold;
+      zoom: 0.8;
+    }
+    .verifyTable td span{
+      font-weight: bold;
+    }
+    @page{
+        size: 971px 1300px;
+        /* margin:0; */
+        /*上下左右*/
+        margin:0mm 10mm 0 20mm ;
+    }
+}

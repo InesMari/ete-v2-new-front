@@ -1,0 +1,72 @@
+/* 传感器 - 温湿度记录表答应 */
+
+@media print {
+    @page {
+        margin: 0.5cm;
+        size: auto;
+    }
+    body{
+        padding: 0 0 10px;
+        box-sizing: border-box;
+    }
+    .tableBox.mini{
+        zoom: 0.95;
+    }
+
+    .tableTitle {
+        position: relative;
+        padding-bottom: 20px;
+
+    }
+    .tableTitle img {
+        position: absolute;
+        height: 40px;
+        left: 10px;
+        top: 10px;
+    }
+
+    .tableTitle h3 {
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 1;
+        text-align: center;
+        color: #000;
+        margin: 0 0 10px;
+    }
+    .tableTitle p{
+        font-size: 14px;
+        line-height: 1;
+    }
+    
+    .tableCommon{
+        border-left:1px solid #000;
+        table-layout: fixed;
+        zoom: 0.8;
+    }
+    .tableCommon th{
+        font-weight: bold;
+        border-top:1px solid #000;
+    }
+    .tableCommon tr{
+        page-break-inside: avoid !important; /* 关键属性：避免行被切割 */
+        break-inside: avoid !important; /* 现代浏览器兼容 */
+        page-break-after: auto;
+    }
+    .tableCommon td,th{
+        font-size: 12px;
+        height: 32px;
+        border-right:1px solid #000;
+        border-bottom:1px solid #000;
+        -webkit-print-color-adjust: exact;
+        text-align: center;
+        /* zoom: 0.8; */
+    }     
+
+    .tip{
+        margin-top: 20px;
+        p{
+            font-size: 12px;
+        }
+    }
+
+}

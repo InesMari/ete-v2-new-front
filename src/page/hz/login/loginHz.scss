@@ -1,0 +1,213 @@
+.loginHzPage{
+    background: url("../../../static/image/login_bg.png") no-repeat center center;
+    background-size: cover;
+    height: 100%;
+    .login_box{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 73%;
+        max-width: 1400px;
+        transform: translateY(-50%) translateX(-50%);
+        -webkit-transform: translateY(-50%) translateX(-50%);
+        background: #fff;
+        border-radius: 25px;
+        .login_box_bg{
+            width: 56%;
+            padding-bottom: 100px;
+        }
+        .loginFrom{
+            padding: 40px 4% 70px 0;
+            width: 35%;
+        }
+        .logo{
+            display: block;
+            margin: 0 auto;
+            width: 320px;
+        }
+        .el-menu{
+            margin:30px 0;
+            border:none;
+            text-align: center;
+        }
+        .el-menu-item{
+            margin:0 30px;
+            padding:0 30px;
+            display: inline-block;
+            float:initial;
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+        }
+        .el-menu--horizontal>.el-menu-item.is-active{
+            border-color: $main-color-hover;
+            color:$main-color-hover;
+        }
+        .el-menu--horizontal .el-menu-item:not(.is-disabled):hover{
+            color: $main-color-hover;
+        }
+        .loginInfo{
+            width: 88%;
+            margin: 0 auto;
+            .item{
+                margin-bottom: 20px;
+                position: relative;
+                .icon{
+                    position: absolute;
+                    top: 50%;
+                    left: 5px;
+                    width: 20px;
+                    transform: translateY(-50%);
+                    -webkit-transform: translateY(-50%);
+                }
+                input{
+                    height: 70px;
+                    border: none;
+                    border-bottom: 1px solid #e8e8e8;
+                    display: block;
+                    padding-left: 40px;
+                    font-size: 16px;
+                    width: 100%;
+                    box-sizing: border-box;
+                    &:focus{
+                        outline: none;
+                    }
+                }                
+                input::-webkit-input-placeholder{
+                    font-size: 16px;
+                }
+                .imgCode{
+                    position: absolute;
+                    right: 5px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    -webkit-transform: translateY(-50%);
+                }
+                &.code{
+                   .el-button{
+                        position: absolute;
+                        right: 5px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        -webkit-transform: translateY(-50%);
+                        width: 120px;
+                        height:45px;
+                   }
+                }
+            }
+        }
+        .loginBtn{
+            width: 100%;
+            margin: 20px 0 10px;
+            height: 90px;
+            background: url("../../../static/image/button_bg.png") no-repeat;
+            background-size: 100% 100%;
+            font-size: 26px;
+            font-family: "宋体";
+            border:none;
+        }
+        .remember {
+            padding: 0 12px;
+            &>a{
+                font-size: 18px;
+            }
+            .el-checkbox__label{
+                font-size: 18px;
+            }
+            .el-checkbox__inner{
+                width: 18px;
+                height: 18px;
+            }
+            .el-checkbox__inner::after{
+                width: 6px;
+                height: 10px;
+            }
+        }
+    }
+    .copyRight{
+        position: absolute;
+        bottom:10%;
+        text-align: center;
+        width: 100%;
+        left: 0;
+    }
+}
+/*
+ *   屏幕适配样式
+*/
+@media screen and (max-width:1630px){
+.loginHzPage{
+    .login_box{
+        .loginFrom{
+            padding: 30px 4% 50px 0;
+        }
+        .el-menu{
+            margin:25px 0;
+        }
+        .el-menu-item{
+            margin: 0 15px 0 20px;
+        }
+        .loginInfo{
+            .item{
+                input{
+                    height: 65px;
+                }
+            }
+        }
+        .loginBtn{
+            height: 80px;
+            margin:10px 0;
+        }
+    }
+}
+}
+
+@media screen and (max-width:1540px){
+    .loginHzPage{
+        .login_box{
+            .el-menu{
+                margin:20px 0;
+            }
+            .el-menu-item{
+                padding:0 20px;
+            }
+            .loginInfo{
+                .item{
+                    input{
+                        height: 55px;
+                    }
+                }
+            }
+            .loginBtn{
+                height: 70px;
+                font-size: 24px;
+            }
+        }
+    }
+}
+@media screen and (max-width:1366px){
+    .loginHzPage{
+        .login_box{
+            .login_box_bg{
+                padding-bottom: 80px;
+            }
+            .el-menu{
+                margin:20px 0;
+            }
+            .el-menu-item{
+                padding:0 15px;
+            }
+            .loginInfo{
+                .item{
+                    margin:0;
+                    input{
+                        height: 55px;
+                    }
+                }
+            }
+        }
+        .loginBtn{
+            height: 70px;
+        }
+    }
+}

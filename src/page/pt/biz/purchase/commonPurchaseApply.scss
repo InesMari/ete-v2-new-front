@@ -1,0 +1,157 @@
+.commonPurchaseApply{
+  .infoTable{
+    background: #fff;
+    border-top:$border;
+    border-left: $border;
+    td{
+      height: 38px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 14px;
+      border-bottom: $border;
+      border-right: $border;
+      &.pd20{
+        padding:0 20px;
+      }
+      .el-textarea__inner{
+        border:none;
+        height: 76px;
+        text-align: center;
+        font-weight: bold;
+        color: #0379FF;
+      }
+      div{
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 38px;
+        text-align: left;
+        .el-input__inner{
+          text-align: center;
+          font-size: 14px;
+          font-weight: bold;
+          color: #0379FF;
+        }
+      }
+      &>.el-input,&>.el-select{
+        width: 100%;
+        .el-input__inner{
+          border:none;
+          text-align: center;
+          font-size: 14px;
+          font-weight: bold;
+          color: #0379FF;
+        }
+      }
+      .tl{
+        .el-input__inner{
+          text-align: center;
+        }
+      }
+      .inlineBlock{
+        display: inline-block;
+        width: 14px;
+      }
+
+      .tableCommon{
+        border-right:$border;
+        border-left:$border;
+        th,td{
+          height: 35px;
+          position: relative;
+          &>em{
+            font-size: 20px;
+            font-weight: bold;
+            vertical-align: middle;
+          }
+          .el-input__inner{
+            height: 25px;
+          }
+          .el-input__icon{
+            line-height: 25px;
+          }
+        }
+        .el-input__inner{
+          border:none;
+          text-align: center;
+        }
+        .el-date-editor,.el-select{
+          width:100%;
+        }
+        .lastTd{
+          position: relative;
+          overflow: initial;
+          .operate{
+            position: absolute;
+            right: -30px;
+            top: 5px;
+          }
+        }
+        tbody,tfoot{
+          tr{
+            background: $disabled-bg-color;
+          }
+        }
+        tfoot{
+          td{
+            font-weight: bold;
+            color: red;
+          }
+        }
+        .add{
+          vertical-align: middle;
+          @include add;
+        }
+        .del{
+          vertical-align: middle;
+          @include del;
+        }
+        .list_icon{
+          width: 20px;
+          position: absolute;
+          top: 7px;
+          left: 5px;
+        }
+      }
+    }
+  }
+  .uploadFile{
+    padding: 20px;
+    background: #fff;
+    border:$border;
+    p{
+      text-align: center;
+    }
+    .imgList{
+      img{
+        width:110px;
+        height: 110px;
+        border-radius: 5px;
+        overflow: hidden;
+        float: left;
+        margin-left: 20px;
+      }
+    }
+    .form{
+      line-height: 110px;
+      font-weight: bold;
+      font-size: 14px;
+      button{
+        margin-left: 20px;
+      }
+      .el-select .el-input input{
+        color: #0379FF;
+      }
+    }
+  }
+  .auditor{
+    .item{
+      float: left;
+      line-height: 45px;
+      font-size: 14px;
+      font-weight: bold;
+      width: 25%;
+      text-align: center;
+    }
+  }
+}
+

@@ -1,0 +1,188 @@
+.courseManagePage {
+    /deep/ .main_content {
+        display: flex;
+        height: 100%;
+
+        .treeView {
+            border: $border;
+            width: 250px;
+            background: #fff;
+            box-sizing: border-box;
+            overflow: auto;
+            margin-right: 20px;
+
+            .treeTitle {
+                line-height: 50px;
+                padding-left: 20px;
+                border-bottom: 1px solid #e8e8e8;
+                font-weight: bold;
+                font-size: 14px;
+            }
+            .courseList{
+                .item{
+                    padding: 0 20px;
+                    line-height: 40px;
+                    cursor: pointer;
+                    &:hover,&.active{
+                        background: $hover-color;
+                    }
+                }
+            }
+
+            .innerTree {
+                padding: 0 20px;
+                overflow: hidden;
+            }
+        }
+
+        .course {
+            background: #fff;
+            flex: 1;
+            height: 100%;
+            border:$border;
+
+            .opView {
+                padding: 20px;
+                border-bottom: $border;
+
+                .el-button {
+                    margin: 0 5px;
+                }
+
+                .el-input {
+                    width: 200px;
+                }
+            }
+
+            .courseList {
+                height: calc(100% - 130px);
+                overflow-y: auto;
+                overflow-x: hidden;
+
+                .item {
+                    display: flex;
+                    padding: 20px;
+                    border-bottom: 1px dashed $border-color;
+                    position: relative;
+
+                    .el-checkbox {
+                        width: 30px;
+                        display: flex;
+                        align-items: center;
+                    }
+                    .setTop{
+                        position: absolute;
+                        width: 45px;
+                        left: 0;
+                        top: 0;
+                        z-index: 9;
+                    }
+
+                    .content {
+                        flex: 1;
+                        display: flex;
+                        position: relative;
+                        .coverImg {
+                            width: 140px;
+                            height: 140px;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+
+                        .dec {
+                            flex: 1;
+                            margin-left: 20px;
+
+                            .title {
+                                font-weight: bold;
+                                font-size: 16px;
+                                line-height: 24px;
+                                color: #333;
+                                margin-bottom: 8px;
+                            }
+
+                            .text {
+                                line-height: 25px;
+                            }
+                        }
+
+                        .totalView {
+                            position: absolute;
+                            right: 20px;
+                            top: 15px;
+                            display: flex;
+
+                            .totalItem {
+                                margin: 0 25px;
+
+                                .total {
+                                    font-size: 18px;
+                                    color: $main-color;
+                                    font-weight: bold;
+                                    text-align: center;
+                                }
+
+                                p {
+                                    margin-top: 10px;
+                                    text-align: center;
+                                }
+                            }
+                        }
+
+                        .opBtns {
+                            position: absolute;
+                            right: 0;
+                            bottom: 0;
+                            .moreBtns{
+                                position: relative;
+                                display: inline-block;
+                                .el-icon-arrow-down{
+                                    margin-left: 5px;
+                                }
+                                &:hover{
+                                    .btnView{
+                                        display: block;
+                                    }
+                                }
+                                .btnView{
+                                    position: absolute;
+                                    border:$border;
+                                    top: 29px;
+                                    left: 5px;
+                                    width: calc(100% - 10px);
+                                    z-index: 9;
+                                    display: none;
+                                    .btn{
+                                        background: #fff;
+                                        border-bottom: $border;
+                                        line-height: 30px;
+                                        cursor: pointer;
+                                        text-align: center;
+                                        &:hover{
+                                            background: $bg-color;
+                                        }
+                                    }
+                                }
+                            }
+                            .el-button {
+                                margin: 0 5px;
+                            }
+                        }
+                    }
+                }
+            }
+            .el-pagination{
+                padding:5px 30px;
+            }
+        }
+    }
+    /deep/ .dbTable{
+        .table_height{
+            height: 50vh;
+            border:$border;
+        }
+    }
+}

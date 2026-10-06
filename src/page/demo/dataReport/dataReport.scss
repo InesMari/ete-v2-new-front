@@ -1,0 +1,101 @@
+.dataReportPage{
+    .reportList{
+        padding-top: 10px;
+        .item{
+            float: left;
+            width: 19%;
+            margin-right: 1%;
+            margin-bottom: 15px;
+            position: relative;
+            border-radius: 8px;
+            box-sizing: border-box;
+            cursor: pointer;
+            &::after{
+                content: "";
+                position: absolute;
+                top: 130px;
+                left: 0;
+                height: 2px;
+                background: #f5f5f5;
+                width: 100%;
+                z-index: 9;
+            }
+            .time{
+                border-top-left-radius: 10px;
+                background: #fff;
+                padding: 12px 0 0 15px;
+                width: calc(100% - 90px);
+                position: relative;
+                line-height: 1;
+                height: 12px;
+                &::after{
+                    content: "";
+                    @include trigon(24px,#fff,bottom);
+                    position: absolute;
+                    right: -24px;
+                    bottom:0;
+                    transform: scaleX(1.8);
+                    -webkit-transform: scaleX(1.8);
+                    z-index: -1;
+                }
+            }
+            .con{
+                background: #fff;
+                border-radius: 10px;
+                border-top-left-radius: initial;
+                padding: 0 15px 12px;
+            }
+            .name{
+                color: #333;
+                font-size: 18px;
+                margin-bottom:10px;
+                font-weight: bold;
+                position: relative;
+                top: -10px;
+            }
+            .introduce{
+                line-height: 20px;
+                height: 70px;
+                text-align: justify;
+            }
+            .info{
+                margin-top: 25px;
+                li{
+                    min-width: 100px;
+                    width: 50%;
+                    text-align: center;
+                }
+                .icon{
+                    border:1px solid #65be44;
+                    border-radius: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 50px;
+                    height: 50px;
+                    margin:0 auto 20px;
+                    img{
+                        width: 20px;
+                    }
+                }
+                p{
+                    margin-bottom: 10px;
+                    .num{
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1500px){
+    .dataReportPage{
+        .reportList{
+            .item{
+                width: 23.5%;
+                margin-right: 1.5%;
+            }
+        }
+    }
+}

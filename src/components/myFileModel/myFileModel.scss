@@ -1,0 +1,140 @@
+.myFileModel{
+    /deep/ .avatar-uploader{
+        position: relative;
+        .el-upload {
+            border: 1px dashed $border-color;
+            border-radius: 6px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            width: 160px;
+            height: 110px;
+            &:hover {
+                border-color: $main-color;
+            }
+            .excelIco{
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                height: 100%;
+            }
+        }
+        &.textBtn{
+            .el-upload{
+                height: auto;
+                border:none;
+                width: auto;
+            }
+        }
+        .avatar-uploader-icon {
+            font-size: 28px;
+            color: #8c939d;
+            width: 160px;
+            height: 110px;
+            line-height: 110px;
+            text-align: center;
+        }
+        .el-upload-dragger{
+            width: 100%;
+            height: 100%;
+            border:none;
+        }
+        .avatar-uploader-inner{
+            height: 100%;
+            .video{
+                width: 100%;
+                height: 100%;
+                background: #000;
+                color: #fff;
+                font-size: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        .img_popup{
+            height: calc(100% - 24px);
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 99;
+            cursor: initial;
+            .close{
+                position: absolute;
+                top:5px;
+                right:5px;
+                width:18px;
+                height: 18px;
+                line-height: 18px;
+                border-radius: 50%;
+                font-size: 14px;
+                background: red;
+                color:#fff;
+                text-align: center;
+                font-weight:bold;
+                cursor: pointer;
+                display: none;
+            }
+            .editImg{
+                height: 24px;
+                line-height: 24px;
+                width: 100%;
+                position: absolute;
+                bottom: -24px;
+                left: 0;
+                background: $main-color;
+                color:#fff;
+                text-align: center;
+                cursor: pointer;
+                display: none;
+                pointer-events: none;
+            }
+            &:hover .close{
+                display: block;
+            }
+        }    
+        &:hover .editImg{
+            display: block;
+        }
+        &.disabled{
+            .el-upload{
+                cursor: not-allowed;
+                background: #efefef;
+            }
+        }
+    }
+
+    .avatar {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .bigImg{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        max-height: 90%;
+        max-width: 90%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    .popup_bj{
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        video{
+            width: 720px;
+            height: 480px;
+        }
+        .close{
+            font-size: 30px;
+            top: 50px;
+            right: 50px;
+            color: #fff;
+            cursor: pointer;
+            position: absolute;
+        }
+    }
+}

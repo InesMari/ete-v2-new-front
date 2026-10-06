@@ -1,0 +1,105 @@
+@media print {
+    body {
+        font-size: 12px;
+    }
+
+    td {
+        -webkit-print-color-adjust: exact;
+    }
+
+    .fillTbale {
+        width: 100%;
+        border-top: 1px solid #e8e8e8;
+        border-left: 1px solid #e8e8e8;
+    }
+
+    .fillTbale td {
+        border-right: 1px solid #e8e8e8;
+        border-bottom: 1px solid #e8e8e8;
+        text-align: center;
+        height: 35px;
+    }
+
+    .fillTbale td .el-input,
+    .fillTbale td .el-select {
+        width: 100%;
+    }
+
+    .fillTbale td .el-input__inner {
+        border: none;
+    }
+
+    .fillTbale td.label {
+        background: 1px solid #e8e8e8;
+        width: 130px;
+        -webkit-print-color-adjust: exact;
+    }
+    .fillTbale td.label em {
+        font-size: 20px;
+        font-weight: bold;
+        vertical-align: middle;
+    }
+
+    .fillTbale td.value {
+        width: 150px;
+    }
+
+    .detailTitle {
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .el-textarea__inner {
+        border: none;
+        resize: none;
+    }
+
+    .scoreTitle {
+        font-weight: bold;
+        text-align: center;
+        line-height: 40px;
+        font-size: 14px;
+    }
+
+    .answerTable {
+        border-left: 1px solid #e8e8e8;
+        border-top: 1px solid #e8e8e8;
+        box-sizing: border-box;
+    }
+
+    .innerTitle {
+        line-height: 40px;
+        border-right: 1px solid #e8e8e8;
+        border-bottom: 1px solid #e8e8e8;
+        font-weight: bold;
+        padding-left: 24px;
+    }
+
+    .thead .td {
+        text-align: center;
+        height: 50px;
+    }
+
+    .td {
+        width: 40%;
+        height: 40px;
+        float: left;
+        padding-left: 24px;
+        border-right: 1px solid #e8e8e8;
+        border-bottom: 1px solid #e8e8e8;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .td.left {
+        justify-content: left;
+    }
+
+    .td:last-child {
+        width: 20%;
+    }
+}

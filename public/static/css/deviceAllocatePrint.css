@@ -1,0 +1,80 @@
+/* 使用页面：
+ * 器具调度打印
+*/
+@media print {
+    body {
+        font-size: 12px;
+    }
+    #printTable{
+        position: relative;
+    }
+    .tableInner{
+        border:2px solid #000;
+        border-bottom-width: 1px;
+    }
+    td {
+        -webkit-print-color-adjust: exact;
+    }
+    .state{
+        position: absolute;
+        top: -9px;
+        right: 30px;
+        border:3px solid red;
+        padding:2px 5px;
+        transform: rotate(15deg);
+    }
+    .state .text{
+        border:1px solid red;
+        width: 70px;
+        line-height: 25px;
+        color: red;
+        text-align: center;
+    }
+    h3.title{
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 20px;
+        position: relative;
+    }
+    h3.title img{
+        height: 30px;
+        position: absolute;
+        left: 20px;
+        top: 10px;
+    }
+    .infoTitle{
+        line-height: 30px;
+        text-align: center;
+        border-top: 1px solid #000;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+    .table{
+        border-top:1px solid #000;
+    }
+    .table .label{
+        width:100px;
+    }
+    .table th{
+        font-weight: bold;
+        background:#efefef;
+    }
+    .table td,.table th{
+        padding:0 10px;
+        height: 32px;
+        border-right:1px solid #000;
+        border-bottom:1px solid #000;
+        &:last-child{
+            border-right: none;
+        }
+    }        
+    .table2 td{
+        text-align: center;
+    }
+    
+}
+@page{
+    size: 1000px 687px;
+}

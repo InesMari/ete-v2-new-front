@@ -1,0 +1,52 @@
+/* 传感器 - 温湿度记录表答应 */
+
+@media print {
+    @page {
+        margin: 0.5cm;
+        size: auto;
+    }
+    body{
+        padding: 0 0 10px;
+        box-sizing: border-box;
+    }
+
+    .tableTitle {
+        background: #fff;
+        line-height: 30px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        color: #000;
+        position: relative;
+        height: 30px;
+
+    }
+    .tableTitle .time{
+        font-size: 12px;
+        position: absolute;
+        right: 0;
+        bottom: 5px;
+        font-size: 12px;
+        font-weight: normal;
+        line-height: 1;
+    }
+    
+    .ownVehicleBenefitAccountingTable{
+        border-left:1px solid #000;
+        border-top: 1px solid #000;
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+    }
+    .ownVehicleBenefitAccountingTable tr{
+        -webkit-print-color-adjust: exact;
+    }
+    .ownVehicleBenefitAccountingTable td{
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+        padding: 5px 10px;
+        color: #000;
+        text-align: center;
+        font-size: 12px;
+    }
+}

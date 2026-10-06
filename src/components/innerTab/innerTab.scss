@@ -1,0 +1,39 @@
+.innerTab{
+    background: #fff;
+    border:$border;
+    border-bottom: none;
+    .innerItem{
+        padding:10px 24px 8px;
+        box-sizing: border-box;
+        float: left;
+        cursor: pointer;
+        border-bottom: 2px solid #fff;
+        p{
+            text-align: center;
+            position: relative;
+            .el-icon-question{
+                position: absolute;
+                top:-4px;
+                right: -14px;
+                padding:0;
+                color: red;
+                font-size: 14px;
+            }
+        }
+        &.active,&:hover{
+            border-bottom-color: $main-color;
+            p{
+                color: $main-color;
+                span{
+                    color: $main-color;
+                }
+            }
+        }
+    }
+    .inline{
+        display: inline-block;
+        span{
+            font-size: 0.5rem;
+        }
+    }
+}

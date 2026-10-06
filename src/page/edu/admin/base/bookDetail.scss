@@ -1,0 +1,140 @@
+.bookDetailPage {
+    height: auto!important;
+    .main_content {
+        display: flex;
+        height: 100%;
+        padding:20px;
+        background: #fff;
+
+        .course {
+            background: #fff;
+            flex: 1;
+            height: 100%;
+
+            .courseList {
+                background: #fafafa;
+                .item {
+                    display: flex;
+                    padding: 30px;
+                    position: relative;
+
+                    .el-checkbox {
+                        width: 30px;
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    .setTop {
+                        position: absolute;
+                        width: 45px;
+                        left: 0;
+                        top: 0;
+                        z-index: 9;
+                    }
+
+                    .content {
+                        flex: 1;
+                        display: flex;
+                        position: relative;
+
+                        .coverImg {
+                            width: 140px;
+                            height: 140px;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+
+                        .dec {
+                            flex: 1;
+                            margin-left: 20px;
+
+                            .title {
+                                font-weight: bold;
+                                font-size: 16px;
+                                line-height: 24px;
+                                color: #333;
+                                margin-bottom: 8px;
+                            }
+
+                            .text {
+                                line-height: 25px;
+                            }
+
+                            .textFlex {
+                                display: flex;
+                                align-items: center;
+                            }
+                        }
+
+                        .totalView {
+                            position: absolute;
+                            right: 20px;
+                            top: 15px;
+                            display: flex;
+
+                            .totalItem {
+                                margin: 0 25px;
+
+                                .total {
+                                    font-size: 18px;
+                                    color: $main-color;
+                                    font-weight: bold;
+                                    text-align: center;
+                                }
+
+                                p {
+                                    margin-top: 10px;
+                                    text-align: center;
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            .introduce {
+                padding: 20px 30px 50px;
+                background: #fafafa;
+                margin-top: 20px;
+
+                .tabs {
+                    border-top-left-radius: 8px;
+                    border-top-right-radius: 8px;
+                    overflow: hidden;
+                    display: inline-block;
+
+                    .tab {
+                        width: 110px;
+                        line-height: 44px;
+                        text-align: center;
+                        font-size: 14px;
+                        cursor: pointer;
+                        float: left;
+                        background: #efefef;
+                        color: #000;
+
+                        &:hover,
+                        &.active {
+                            color: #fff;
+                            background: #ff7070;
+                        }
+                    }
+                }
+
+                .textView {
+                    font-size: 12px;
+                    text-align: justify;
+                    margin-top: 20px;
+                    min-height: 100px;
+                    padding: 0 20px;
+                    white-space:pre-wrap;
+                    word-break: break-all;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,173 @@
+.mapTrackPage{
+    position: relative;
+    .bm-view{
+        width: 100%;
+        height: 80vh;
+    }
+    .map-popup{
+        width: 1080px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -540px;
+        background: #fff;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        padding:10px 20px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.4);
+        z-index: 999;
+        opacity: 0.9;
+        &:hover{
+            opacity: 1;
+        }
+        .search-info{
+            margin-top: 4px;
+            .label{
+                float: left;
+                line-height: 40px;
+                margin-right: 10px;
+            }
+            .value{
+                float: left;
+                margin-right: 20px;
+            }
+            .el-select{
+                width: 120px;
+            }
+        }
+        .player{
+            .playBtn{
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background: $border-color;
+                position: relative;
+                cursor: pointer;
+                float: left;
+                margin:10px 20px 0 0;
+                cursor: pointer;
+                &::after{
+                    content: "";
+                    margin-top: 7px;
+                    position: absolute;
+                    top: 0px;
+                    left: 12px;
+                    @include trigon(8px,#fff,left);
+                }
+                &:hover{
+                    background: $main-color;
+                }
+            }
+            .pauseBtn{
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background: $border-color;
+                position: relative;
+                cursor: pointer;
+                float: left;
+                margin:10px 20px 0 0;
+                cursor: pointer;
+                &:hover{
+                    background: $main-color;
+                }
+                &::after,&::before{
+                    content: "";
+                    position: absolute;
+                    top: 7px;
+                    left: 10px;
+                    height: 15px;
+                    width: 4px;
+                    background: #fff;
+                }
+                &::before{
+                    left: 16px;
+                }
+            }
+            .map-progress{
+                width: 250px;
+                float: left;
+                .el-slider{                    
+                    cursor: pointer;
+                }
+                .el-slider__button{
+                    width: 8px;
+                    height: 8px;
+                }
+                .play-distance{
+                    .el-slider__runway{
+                        margin:10px 0;
+                    }
+                }
+                .time{
+                    float: left;
+                    margin-right: 10px;
+                }
+                .play-speed{
+                    .el-slider{
+                        width: 70px;
+                        display: inline-block;
+                        margin-left: 3px;
+                        vertical-align: top;
+                        .el-slider__runway{
+                            margin:8px 0;
+                        }
+                    }
+                }
+            }
+            .refresh{
+                float: left;
+                width: 25px;
+                height: 25px;
+                margin:10px 15px;
+                cursor: pointer;
+                border:$border;
+                cursor: pointer;
+                img{
+                    width: 16px;
+                    margin: 4px;
+                }
+                .i_1{
+                    display: none;
+                }
+                &:hover{
+                    border-color:$main-color;
+                    .i_1{
+                        display: block;
+                    }
+                    .i_2{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .info{
+            float: left;
+            min-height: 50px;
+            min-width: 230px;
+            margin-top: 4px;
+            &>div{
+                line-height: 22px;
+            }
+            .arriveTime{
+                max-width: 240px;
+            }
+        }
+        .export{
+            margin:6px 0 0 20px;
+        }
+    }
+    .iwContainer{
+        border:$border;
+        background: #fff;
+        border-radius: 3px;
+        box-shadow: 0 0 3px rgba(0,0,0,0.3);
+        .iw-g-font{
+            word-break: break-all;
+            white-space: normal;
+        }
+    }
+    .anchorBL{
+        display: none;
+    }
+}

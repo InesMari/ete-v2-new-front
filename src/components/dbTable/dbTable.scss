@@ -1,0 +1,157 @@
+.dbTable{
+    position: relative;
+
+    .table_height{
+        overflow: auto;
+        overflow-x: scroll!important;
+        width:100%;
+        position: relative;
+        min-height: 300px;
+        height: 100%;
+    }
+    .tableCommonFix.tableCommon{
+        position: absolute;
+        left:0;
+        top:0;
+        z-index:100;
+    }
+    .flip-list-move {
+        transition: transform 0.5s;
+    }
+
+    .no-move {
+        transition: transform 0s;
+    }
+
+    .leftTable{
+        float: left;
+        width: 48%;
+        position: relative;
+        transition: all .5s;
+        height: 100%;
+    }
+    .rightTable{
+        float: right;
+        width: 48%;
+        position: relative;
+        transition: all .5s;
+        height: 100%;
+        .table_height{
+            border-left: $border;
+        }
+    }
+    .tableCommon{
+        .fixed-tbody{
+            margin-bottom: 31px;
+        }
+        .fixed-tfoot{
+            td{
+                color: red;
+                font-weight: bold;
+            }
+        }
+        .el-icon-circle-plus,.el-icon-remove{
+            font-size: 16px;
+            color:$main-color;
+            cursor: pointer;
+        }
+        .el-icon-remove{
+            color:red;
+        }
+        .el-input__inner{
+            background-color: $focus-color;
+        }
+    }
+    .noData{
+        position: absolute;
+        width: 100%;
+        font-size: 16px;
+        color: #999;
+        top: 100px;
+        text-align: center;
+    }
+    // 表格设置
+    .setTableRow {
+        position: absolute;
+        box-sizing: border-box;
+        right: 15px;
+        top:-39px;
+        z-index: 999;
+        .package {
+            position: absolute;
+            top: 18px;
+            right: 0;
+            background: #fff;
+            border: $border;
+            border-radius: 3px;
+            padding: 10px 0 10px 20px;
+            margin-top: 10px !important;
+            text-align: left;
+            z-index: 9999;
+            min-width: 240px;
+            .listShow{
+                max-height: 300px;
+                overflow: auto;
+            }
+            .item{
+                cursor: pointer;
+                padding:3px 0;
+                line-height: 22px;
+            }
+            .bot_btn{
+                margin-top: 10px;
+                padding:0 20px;
+                text-align: center;
+            }
+        }
+        .tableChange{
+            width: 28px;
+            height: 28px;
+            text-align: center;
+            display: inline-block;
+            background: #1c67b0;
+            border-radius: 3px;
+            vertical-align: top;
+            margin-left: 10px;
+            cursor: pointer;
+            &:hover{
+                background: $main-color-hover;
+            }
+            img{
+                width: 21px;
+                vertical-align: top;
+                margin-top: 3px;
+            }
+        }
+    }
+
+    .tableStyle {
+        margin-right: 108px;
+        margin-bottom: -74px;
+        position: relative;
+        z-index: 10;
+        width: auto;
+    }
+    .table_height_left{
+        border-right: $border;
+    }
+    .table_page{
+        padding:10px;
+        .total{
+            color:$tip-color;
+        }
+        .num{
+            border:$border;
+            padding:0 5px;
+            line-height: 23px;
+            border-radius: 3px;
+            margin:0 3px;
+            display: inline-block;
+            cursor: pointer;
+            &:hover,&.active{
+                color:$main-color;
+                background: $bg-color;
+            }
+        }
+    }
+}

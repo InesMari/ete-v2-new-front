@@ -1,0 +1,120 @@
+@media print {
+    .topView {
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    .topView .logo {
+        height: 50px;
+    }
+
+    .topView .num {
+        position: absolute;
+        bottom: 10px;
+        right: 0;
+        font-size: 14px;
+        font-weight: bold;
+        color: #000;
+    }
+
+    .table-view {
+        border: 1px solid #000;
+    }
+
+    .table-view .table-title {
+        line-height: 50px;
+        font-size: 18px;
+        text-align: center;
+        font-weight: bold;
+        border-bottom: 1px solid #000;
+        color: #000;
+    }
+
+    .table-view .item {
+        border-bottom: 1px solid #000;
+    }
+
+    .table-view .item:last-child {
+        border: none;
+    }
+
+    .table-view .item .title {
+        line-height: 35px;
+        padding-left: 20px;
+        font-size: 14px;
+        color: #000;
+        font-weight: bold;
+    }
+
+    .table-view .item .text {
+        font-size: 14px;
+        color: #000;
+        line-height: 25px;
+        padding: 0 20px 10px;
+
+    }
+
+    .table-view .item .text .sure {
+        font-size: 14px;
+        color: #000;
+
+    }
+
+    .table-view .item .text .sure span {
+        display: inline-block;
+        min-width: 40%;
+    }
+
+    .table-view .item .img-view {
+        padding: 10px 20px;
+
+    }
+
+    .table-view .item .img-view img {
+        margin-right: 10px;
+        width: 120px;
+        height: 120px;
+    }
+
+    .table-view .item.spec {
+        display: flex;
+
+    }
+
+    .table-view .item.spec .title {
+        width: 100px;
+        border-right: 1px solid #000;
+    }
+
+    .table-view .item.spec .text {
+        flex: 1;
+        padding-left: 20px;
+        font-size: 14px;
+        line-height: 35px;
+        padding: 0 0 0 20px;
+    }
+
+    .sign {
+        display: flex;
+        margin: 10px 0;
+
+    }
+
+    .sign div {
+        line-height: 35px;
+        font-size: 14px;
+        color: #000;
+        flex: 1;
+    }
+
+    .tip {
+        color: #000;
+        font-size: 14px;
+    }
+    .el-checkbox__label{
+        display: inline-block;
+        padding-left: 10px;
+        line-height: 19px;
+        font-size: 14px;
+    }
+}

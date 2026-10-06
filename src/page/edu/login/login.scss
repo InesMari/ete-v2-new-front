@@ -1,0 +1,160 @@
+.loginEduPage {
+    background: url("../../../static/image/edu/login_bg.png") no-repeat center center;
+    background-size: cover;
+    height: 100%;
+
+    .login_box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 73vw;
+        transform: translateY(-50%) translateX(-50%);
+        -webkit-transform: translateY(-50%) translateX(-50%);
+        background: #fff;
+        border-radius: 25px;
+
+        .login_box_bg {
+            width: 40vw;
+        }
+
+        .loginFrom {
+            padding: 4vh 2.5vw 5vh 0;
+            width: 28vw;
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto;
+            width: 70%;
+        }
+
+        .el-menu {
+            margin: 4vh 0;
+            border: none;
+            text-align: center;
+        }
+
+        .el-menu-item {
+            margin: 0 1.5vw;
+            padding: 0 1.5vw;
+            display: inline-block;
+            float: initial;
+            height: 4.25vh;
+            line-height: 4.25vh;
+            font-size: 1vw;
+        }
+
+        .el-menu--horizontal>.el-menu-item.is-active {
+            border-color: $main-color;
+            color: $main-color;
+        }
+
+        .el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
+            color: $main-color;
+        }
+
+        .loginInfo {
+            width: 88%;
+            margin: 0 auto;
+
+            .item {
+                margin-bottom: 3vh;
+                position: relative;
+
+                .icon {
+                    position: absolute;
+                    top: 50%;
+                    left: 0.9vw;
+                    width: 1.2vw;
+                    transform: translateY(-50%);
+                    -webkit-transform: translateY(-50%);
+                }
+
+                input {
+                    height: 6.6vh;
+                    border: none;
+                    border-bottom: 1px solid #e8e8e8;
+                    display: block;
+                    padding-left: 2.8vw;
+                    font-size: 1vw;
+                    width: 100%;
+                    box-sizing: border-box;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                input::-webkit-input-placeholder {
+                    font-size: 1vw;
+                }
+
+                .imgCode {
+                    position: absolute;
+                    right: 5px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    -webkit-transform: translateY(-50%);
+                }
+
+                &.code {
+                    .el-button {
+                        position: absolute;
+                        right: 5px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        -webkit-transform: translateY(-50%);
+                        width: 120px;
+                        height: 45px;
+                    }
+                }
+            }
+        }
+
+        .loginBtn {
+            width: 90%;
+            margin: 3vh auto 2.5vh;;
+            height: 6vh;
+            background: $main-color;
+            background-size: 100% 100%;
+            font-size: 1.4vw;
+            font-family: "宋体";
+            border: none;
+            display: block;
+
+            &:hover {
+                background: $main-color-hover;
+            }
+        }
+
+        /deep/ .remember {
+            padding: 0 5%;
+
+            &>a {
+                font-size: 0.8vw;
+            }
+
+            .el-checkbox__label {
+                font-size: 0.8vw;
+            }
+
+            .el-checkbox__inner {
+                width: 0.8vw;
+                height: 0.8vw;
+            }
+
+            .el-checkbox__inner::after {
+                width: 6px;
+                height: 10px;
+            }
+        }
+    }
+
+    .copyRight {
+        position: absolute;
+        bottom: 10%;
+        text-align: center;
+        width: 100%;
+        left: 0;
+    }
+}

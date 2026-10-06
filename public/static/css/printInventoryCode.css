@@ -1,0 +1,100 @@
+@media print {
+    @page {
+        margin: 0;
+        size: auto;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        color: #000;
+        height: 100vh;
+    }
+    #printTagId{
+        display: block!important;
+    }
+    .codeItem {
+        width: 100vw;
+        box-sizing: border-box;
+        position: relative;
+        height: 100vh;
+        padding-top: 3vh;
+    }
+
+    .codeItem .logo {
+        width: 10vh;
+        position: absolute;
+        left: 3.3vw;
+        top: 4vh;
+        filter: grayscale(100%);
+    }
+
+    .codeItem .title {
+        text-align: center;
+        font-size: 4.5vh;
+        color: #000;
+    }
+
+    .codeItem .tagId {
+        text-align: center;
+        font-size: 4vh;
+        color: #000;
+    }
+
+    .codeItem .oldTagId {
+        text-align: center;
+        font-size: 3.4vh;
+        color: #666;
+    }
+    
+    .mark{
+        position: absolute;
+        padding: 2.3vh;
+        border:0.1vh solid #333;
+        top: 5vh;
+        right: 3.3vw;
+        border-radius: 50%;
+        line-height: 1;
+        color: #000;
+        zoom: 0.8;
+    }
+
+    .codeItem .code {
+        display: block;
+        margin: 1.5vh auto;
+        height: 27vh;
+    }
+
+    .codeItem .item {
+        display: flex;
+        line-height: 6.5vh;
+    }
+
+    .codeItem .item:last-child {
+        border: none;
+    }
+
+    .codeItem .item .label {
+        line-height: 6.5vh;
+        width: 40vw;
+        text-align: right;
+        color: #000;
+        font-size: 3.4vh;
+        zoom: 0.8;
+    }
+
+    .codeItem .item .text {
+        line-height: 6.5vh;
+        padding-left: 1.7vw;
+        color: #000;
+        font-size: 3.4vh;
+        zoom: 0.8;
+        position: relative;
+        border-bottom: 0.1vh solid #333;
+        width: 67vw;
+    }
+    .codeItem .item .unit{
+        margin-left: 3.3vw;
+    }
+
+}

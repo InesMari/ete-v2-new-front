@@ -1,0 +1,72 @@
+.operatingDataDetailPage {
+    .common-info {
+        padding-top: 20px;
+        height: 100%;
+        box-sizing: border-box;
+        .title{
+            background: #f7fafd;
+            font-weight: 600;
+            font-size: 14px;
+            text-align: left;
+            padding-left: 40px!important;
+            color:$main-color;
+            position: relative;
+            &::before{
+                content: "";
+                height: 10px;
+                width: 10px;
+                border-radius: 50%;
+                background: $main-color;
+                position: absolute;
+                left:20px;
+                top:10px;
+            }
+        }
+    }
+    .detailTitle {
+        line-height: 1.5;
+        margin-bottom: 20px;
+        font-size: 16px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    /deep/ .tableCommon {
+        border: $border;
+        .link{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .el-input__inner {
+            text-align: center;
+        }
+        td:first-child{
+            text-align: left;
+            padding-left: 20px;
+        }
+    }
+
+    .table_height {
+        overflow: auto;
+        height: calc(100% - 80px);
+        position: relative;
+
+        thead {
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 9;
+
+        }
+    }
+    .opView {
+        display: flex;
+        margin-top: 10px;
+
+        .item {
+            flex-grow: 1;
+            text-align: center;
+        }
+    }
+}
