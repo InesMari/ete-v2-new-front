@@ -1,0 +1,102 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/preserve/preserve",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "易迁易学院"
+			}
+		},
+		{
+			"path": "pages/home/home",
+			"style": {
+				"navigationBarTitleText": "易迁易学院"
+			}
+		},
+		{
+			"path" : "pages/forgetPsw/forgetPsw",
+			"style" : 
+			{
+				"navigationBarTitleText" : "重置密码"
+			}
+		},
+		{
+			"path" : "pages/resetPsw/resetPsw",
+			"style" : 
+			{
+				"navigationBarTitleText" : "重置密码"
+			}
+		},
+		{
+			"path" : "pages/course/courseDetail",
+			"style" :
+			{
+				"navigationBarTitleText" : "查看课程"
+			}
+		},
+		{
+			"path" : "pages/course/chapterDetail",
+			"style" :
+			{
+				"navigationBarTitleText" : "章节学习"
+			}
+		},
+		{
+			"path" : "pages/course/courseList",
+			"style" :
+			{
+				"navigationBarTitleText" : "我的课程"
+			}
+		},
+		{
+			"path" : "pages/mine/mine",
+			"style" :
+			{
+				"navigationBarTitleText" : "我的"
+			}
+		},
+		{
+			"path" : "pages/pdfViewer/pdfViewer",
+			"style" :
+			{
+				"navigationBarTitleText" : "PDF查看"
+			}
+		},
+		{
+			"path" : "pages/exam/exam",
+			"style" :
+			{
+				"navigationBarTitleText" : "考试"
+			}
+		},
+		{
+			"path" : "pages/exam/examRecord",
+			"style" :
+			{
+				"navigationBarTitleText" : "考试记录"
+			}
+		},
+		{
+			"path" : "pages/exam/examDetail",
+			"style" :
+			{
+				"navigationBarTitleText" : "考试详情"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"easycom": {
+		"autoscan": true,
+		"custom": {}
+	}
+}

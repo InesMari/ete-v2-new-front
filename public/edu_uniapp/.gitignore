@@ -1,0 +1,8 @@
+# unpackage\dist\build\web需要上传
+unpackage/*/
+!unpackage/dist/
+unpackage/dist/*/
+!unpackage/dist/build/
+unpackage/dist/build/*/
+!unpackage/dist/build/web/
+# end

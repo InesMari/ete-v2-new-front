@@ -1,0 +1,20 @@
+{
+    "id": "zqs-select",
+    "name": "下拉多选，单选，搜索",
+    "displayName": "下拉多选，单选，搜索",
+    "version": "1.0.2",
+    "description": "下拉多选，单选，搜索（纯uni 规范代码 不引入其他任何插件）",
+    "keywords": [
+        "multiSelector",
+        "单选",
+        "多选",
+        "下拉",
+        "筛选"
+    ],
+    "dcloudext": {
+        "category": [
+            "前端组件",
+            "通用组件"
+        ]
+    }
+}
