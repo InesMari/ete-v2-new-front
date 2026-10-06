@@ -1,0 +1,131 @@
+.orderPage{
+    .common-info{
+        min-height: 100%;
+        box-sizing: border-box;
+        .edit{
+            position: absolute;
+            right: 5px;
+            top: 7px;
+            width: 35px;
+            cursor: pointer;
+        }
+    }
+    .table_height{
+        overflow: auto;
+    }
+    .tableCommon{
+        border-right:$border;
+        border-left:$border;
+        th,td{
+            height: 35px;
+            position: relative;
+            &>em{
+                font-size: 20px;
+                font-weight: bold;
+                vertical-align: middle;
+            }
+            .el-input__inner{
+              height: 25px;
+            }
+            .el-input__icon{
+              line-height: 25px;
+            }
+        }
+        .el-input__inner{
+            border:none;
+            text-align: center;
+        }
+        .el-date-editor,.el-select{
+            width:100%;
+        }
+        .lastTd{
+            position: relative;
+            overflow: initial;
+            .operate{
+                position: absolute;
+                right: -30px;
+                top: 5px;
+            }
+        }
+        tbody,tfoot{            
+            tr{
+                background: $disabled-bg-color;
+            }
+        }
+        tfoot{
+            td{
+                font-weight: bold;
+                color: red;
+            }
+        }
+        .add{
+            vertical-align: middle;
+            @include add;
+        }
+        .del{
+            vertical-align: middle;
+            @include del;
+        }
+        .list_icon{
+            width: 20px;
+            position: absolute;
+            top: 7px;
+            left: 5px;
+        }
+    }
+}
+.dispatchPage{
+    background: #fff;
+    padding:0 35px 30px 0;
+    min-height: 100%;
+    height: auto!important;
+    position: relative;
+    .edit_icon{
+        position: absolute;
+        top: 0;
+        right: 5px;
+        width: 35px;
+        cursor: pointer;
+    }
+    .orderInfo{
+        border-right: $border;
+    }
+    .upload_icon{
+        position: absolute;
+        right: -30px;
+        top: 7px;
+        width: 25px;
+        cursor: pointer;
+    }
+    .infoTable{
+        padding-top: 20px;
+        .leftTitle{
+            float: left;
+            width: 36px;
+            background: $border-color;
+            font-weight: bold;
+            font-size: 14px;
+            height: 540px;
+            letter-spacing: 5px;
+            text-align: center;
+            writing-mode: vertical-lr;
+            vertical-align: middle;
+            padding: 0 9px;
+            box-sizing: border-box;
+        }
+        .innerTable{
+            float: left;
+            width: calc(100% - 36px);
+        }
+    }
+}
+
+.add-work-option{
+    border-bottom: $border;
+    div{
+        text-align: center;
+        color: $main-color;
+        height: inherit;
+        line-height: inherit;
+    }
+}

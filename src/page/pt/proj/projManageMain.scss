@@ -1,0 +1,60 @@
+.tableCommon{
+    .mySelect{
+        .optionName{
+            padding:3px 5px;
+        }
+    }
+    /*
+    *  状态
+    *  待处理       1
+    *  待确认
+    *  再次打开     4
+    */
+    .state1{
+        color: #2a9feb;
+        &:hover{
+            color:#69bcf1;
+        }
+    }
+    /*
+    *  状态
+    *  处理中       2
+    *  开发完成     3
+    *  测试中       4   5
+    *  测试完成     5   6
+    */
+    .state2{
+        color: #5fce9d;
+        &:hover{
+            color:#8fddba;
+        }
+    }
+    /*
+    *  状态
+    *  已发生产       
+    *  无效缺陷
+    *  重复缺陷
+    *  暂不修复     2
+    *  已修复       3
+    *  已发生产     6   7
+    */
+    .state3{
+        color: #ffa428;
+        &:hover{
+            color:#ffbf68;
+        }
+    }
+    /*
+    *  状态
+    *  已取消       7
+    *  已完成       8
+    *  已关闭       8
+    */
+    .state4{
+        color: #ebedef;
+        &:hover{
+            color:#f1f2f4;
+        }
+    }
+}
+

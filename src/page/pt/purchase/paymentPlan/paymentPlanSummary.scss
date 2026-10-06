@@ -1,0 +1,17 @@
+.rankView{
+    display: flex;
+    .rankItem{
+        flex: 1;
+        margin:0 10px;
+        border: $border;
+        box-sizing: border-box;
+        padding: 10px;
+        border-radius: 5px;
+        .rankTitle{
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 10px;
+            padding: 10px 0;
+        }
+    }
+}

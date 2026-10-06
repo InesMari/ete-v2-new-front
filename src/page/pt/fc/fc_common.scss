@@ -1,0 +1,127 @@
+.fcCommonPage{
+    height: 100%;
+    background: #fff;
+    .table-content{
+      border-top:1px dashed $border-color;
+      height: calc(100% - 275px)!important;
+    }
+    .tagList{
+      background: #fff;
+      border:$border;
+      border-bottom: none;
+      .tag{
+        float: left;
+        width: 270px;
+        position: relative;
+        border-top: 3px solid $main-color;
+        border-right: $border;
+        min-height: 270px;
+        box-sizing: border-box;
+        .tip{
+          position: absolute;
+          left: 0;
+          top: 0;
+          color: #fff;
+          height: 50px;
+          width: 50px;
+          overflow: hidden;
+          box-sizing: border-box;
+          padding:3px 5px;
+          span{
+            position: relative;
+            z-index: 9;
+            font-weight: bold;
+          }
+          &::before,&::after{
+            content:"";
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include trigon(25px,$main-color,top);
+          }
+          &::after{
+            top: -1px;
+            @include trigon(25px,$main-color,left);
+          }
+        }
+        .title{
+          text-align: center;
+          line-height: 66px;
+          font-size: 24px;
+          font-weight: bold;
+          color: $main-color;
+        }
+        .cash{
+          font-size: 24px;
+          color: #bf7100;
+          text-align: center;
+          margin-bottom:15px;
+        }
+        .flexBox{
+          display: flex;
+          justify-content: center;
+        }
+        .contet{
+          padding: 0 15px;
+          &.center{
+              display: inline-block;
+              white-space: nowrap;
+              .item{
+                  .label{
+                      width: 70px!important;
+                  }
+              }
+          }
+          .item{
+            display: flex;
+            padding:5px 0;
+            .label{
+              width: 70px;
+              text-align: right;
+              font-size: 14px;
+              display: flex;
+              align-items: center;
+              justify-content: flex-end;
+            }
+            .text{
+              flex:1;
+              -webkit-flex:1;
+              font-size: 14px;
+              word-break: break-all;
+              .el-select,.el-input{
+                width: 100%!important;
+              }
+            }
+          }
+        }
+        .definite{
+          padding-left: 50px;
+          margin-bottom: 15px;
+          overflow: hidden;
+          .label{
+            float: left;
+            width: 95px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            background: $tip-color;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            color: #fff;
+            font-size: 14px;
+            &.bg_blue{
+              background: $main-color;
+            }
+          }
+          .text{
+            float: left;
+            margin-left: 20px;
+            line-height: 26px;
+          }
+        }
+        .link{
+          text-align: center;
+        }
+      }
+    }
+}

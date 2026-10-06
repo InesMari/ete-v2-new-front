@@ -1,0 +1,153 @@
+.hrManagementCostDetailPage {
+    .common-info {
+        padding: 10px 20px;
+        height: 100%;
+        box-sizing: border-box;
+
+        .fillTbale {
+            .labelSpec {
+                background: #f3f9ff;
+                font-weight: bold;
+            }
+
+            /deep/ .el-textarea__inner {
+                border: none;
+                resize: none;
+                height: 115px;
+            }
+        }
+
+        h3 {
+            line-height: 40px;
+            font-weight: bold;
+            color: #333;
+            font-size: 14px;
+
+            em {
+                font-size: 12px;
+            }
+
+            /deep/ .el-checkbox__label {
+                font-size: 14px;
+                font-weight: bold;
+                color: #333;
+            }
+        }
+
+        .tableItem {
+            height: calc(100% - 200px);
+            /deep/ .tableCommon {
+                border: $border;
+
+                .el-input__inner {
+                    text-align: center;
+                }
+
+                .add {
+                    vertical-align: middle;
+                    @include add;
+                }
+
+                .del {
+                    vertical-align: middle;
+                    @include del;
+                }
+            }
+        }
+    }
+
+    /deep/ .dbTable {
+        .table_height {
+            border: $border;
+        }
+
+        .tfoot {
+            display: none;
+        }
+    }
+
+    .operateDialog {
+        .title {
+            display: flex;
+
+            >div {
+                flex: 1;
+                font-size: 14px;
+                font-weight: bold;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .timeline {
+        position: fixed;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 999;
+        padding: 10px;
+        border-radius: 5px;
+        transition: all .3s;
+
+        .item {
+            position: relative;
+            padding-bottom: 20px;
+            padding-right: 20px;
+            text-align: center;
+            min-height: 40px;
+            cursor: pointer;
+
+            .circle {
+                position: absolute;
+                background-color: #E4E7ED;
+                border-radius: 50%;
+                width: 12px;
+                height: 12px;
+                right: 0;
+                top: 16px;
+                margin-top: -6px;
+                z-index: 9;
+                &.active{
+                    background: #07c160;
+                }
+            }
+
+            .line {
+                position: absolute;
+                right: 5px;
+                top: 16px;
+                height: 100%;
+                border-left: 2px solid #E4E7ED;
+            }
+
+            .content {
+                display: none;
+
+            }
+
+            &:last-child{
+                padding-bottom: 0;
+                .line{
+                    display: none;
+                }
+            }
+            
+            &:hover{
+                p{
+                    color: #07c160;
+                }
+            }
+        }
+        &:hover{
+            background: #fff;
+            box-shadow: 0 0 4px rgba(0,0,0,0.2);
+            right: 10px;
+            .item{
+                .content {
+                    display: block;
+                }
+            }
+        }
+    }
+}

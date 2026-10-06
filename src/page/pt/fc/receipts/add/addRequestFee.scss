@@ -1,0 +1,227 @@
+.addRequestFeePage {
+  /deep/ .infoTable {
+    background: #fff;
+    border-top: $border;
+    border-left: $border;
+
+    td {
+      height: 38px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 14px;
+      border-bottom: $border;
+      border-right: $border;
+
+      &.pd20 {
+        padding: 0 20px;
+      }
+
+      .el-textarea__inner {
+        border: none;
+        height: 76px;
+        text-align: center;
+        color: #0379FF;
+      }
+
+      div {
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 38px;
+        text-align: left;
+
+        .el-input__inner {
+          text-align: center;
+          font-size: 14px;
+          font-weight: bold;
+          color: #0379FF;
+        }
+      }
+
+      &>.el-input,
+      &>.el-select,
+      &>.el-cascader,
+      &>.el-autocomplete {
+        width: 100%;
+
+        .el-input__inner {
+          border: none;
+          text-align: center;
+          font-size: 14px;
+          font-weight: bold;
+          color: #0379FF;
+        }
+      }
+
+      .tl {
+        .el-input__inner {
+          text-align: center;
+        }
+      }
+
+      .inlineBlock {
+        display: inline-block;
+        width: 14px;
+      }
+    }
+  }
+
+  /deep/ .uploadFile {
+    padding: 20px;
+    background: #fff;
+    border: $border;
+
+    .fileListView {
+      display: flex;
+      min-width: 0;
+    }
+
+    .fileView {
+      flex: 1;
+      margin-right: 20px;
+      display: flex;
+      min-width: 0;
+
+      .label {
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 80px;
+      }
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .imgList {
+      img {
+        width: 110px;
+        height: 110px;
+        border-radius: 5px;
+        overflow: hidden;
+        float: left;
+        margin-left: 20px;
+      }
+    }
+
+    .form {
+      line-height: 80px;
+      font-weight: bold;
+      font-size: 14px;
+
+      button {
+        margin-left: 20px;
+      }
+
+      .el-select .el-input input {
+        color: #0379FF;
+        font-weight: 700;
+        font-size: 14px;
+      }
+    }
+
+    .otherFile {
+      position: relative;
+
+      .tip {
+        position: absolute;
+        top: 85px;
+        left: -12px;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .auditor {
+    .item {
+      float: left;
+      line-height: 45px;
+      font-size: 14px;
+      font-weight: bold;
+      width: 25%;
+      text-align: center;
+    }
+  }
+  
+  /deep/ .myAutocomplete{
+    .el-popover{
+      box-sizing: border-box;
+      width: 100%;
+      padding: 6px 0;
+    }
+    input{
+      width: 100%;
+      padding: 0 12px;
+      border: none;
+      text-align: center;
+      display: block;
+      box-sizing: border-box;
+      &::placeholder{
+        font-weight: bold;
+      }
+    }
+    .delIcon{
+      color:#666;
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 14px;
+      opacity: 0.5;
+      cursor: pointer;
+      &:hover{
+        opacity: 1;
+      }
+    }
+    .searchList{
+      max-height: 300px;
+      overflow-y: auto;
+      .title{
+        font-size: 12px;
+        color: #909399;
+        line-height: 30px;
+        font-weight: normal;
+        padding:0 20px;
+      }
+      .list{
+        .item{          
+          padding-right: 40px;
+          font-weight: normal;
+          font-size: 14px;
+          position: relative;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          color: #606266;
+          height: 34px;
+          line-height: 34px;
+          box-sizing: border-box;
+          cursor: pointer;
+          padding:0 40px 0 20px;
+          &:hover{
+            background-color: #f5f7fa;
+          }
+          .unit{
+            position: absolute;
+            right: 10px;
+            color: #0379FF; 
+            font-size: 13px;
+            z-index: 8;
+          }
+        }
+      }
+    }
+    .noData{
+      text-align: center;
+      line-height: 36px;
+      font-size: 14px;
+    }
+  }
+}
+
+.addRequestFeeCascader {
+  margin-left: 6vw;
+
+  .el-cascader-menu {
+    width: 15vw;
+  }
+}

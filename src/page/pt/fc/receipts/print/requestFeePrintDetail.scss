@@ -1,0 +1,92 @@
+.requestFeePrintDetailPage{
+    /deep/ .infoTable{
+      background: #fff;
+      border-top:$border;
+      border-left: $border;
+      td{
+        height: 36px;
+        text-align: center;
+        
+        font-size: 14px;
+        border-bottom: $border;
+        border-right: $border;
+        &.pd20{
+          padding:0 20px;
+        }
+        .el-textarea__inner{
+          border:none;
+          height: 76px;
+        }
+        div{
+          font-size: 14px;
+          
+          line-height: 36px;
+          text-align: left;
+          .el-input__inner{
+            text-align: center;
+          }
+        }
+        &>.el-input,&>.el-select{
+          width: 100%;
+          .el-input__inner{
+            border:none;
+            text-align: center;
+          }
+        }
+        .tl{
+          .el-input__inner{
+            text-align: center;
+          }
+        }
+      }
+    }
+    /deep/ .uploadFile{
+      padding: 20px;
+      background: #fff;
+      border:$border;
+      p{
+        text-align: center;
+      }
+      .imgList{
+        img{
+          width:110px;
+          height: 110px;
+          border-radius: 5px;
+          overflow: hidden;
+          float: left;
+          margin-left: 20px;
+        }
+      }
+      .form{
+        line-height: 110px;
+        
+        font-size: 14px;
+        button{
+          margin-left: 20px;
+        }
+      }
+    }
+    .page-bot-btn{
+      position: sticky;
+      bottom: -10px;
+      background: #fff;
+      margin: 0;
+      padding: 20px 0;
+      border-top: 1px solid #eee;
+    }
+    .verifyTable{
+      margin-left:10%;
+      table-layout: fixed;
+      padding:5px 0 10px;
+      td{
+        text-align: center;
+        font-size: 12px;
+        width: 15%;
+        font-weight: bold;
+        zoom: 0.8;
+        span{
+          font-weight: bold;
+        }
+      }
+    }
+}
